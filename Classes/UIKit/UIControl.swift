@@ -6,6 +6,19 @@ import UIKit
 
 public extension UIControl {
 
+    /**
+     Swifty way of adding actions to buttons. But make sure to avoid retain cycles.
+     
+     *Example*
+     
+     let button = UIButton()
+     
+     button.setAction {
+     
+        print("test")
+     
+     }
+     */
     public func setAction(for controlEvents: UIControl.Event = .primaryActionTriggered, action: @escaping () -> Void) {
         removeTarget(nil, action: nil, for: .allEvents)
         let sleeve = ClosureSleeve(attachTo: self, closure: action)

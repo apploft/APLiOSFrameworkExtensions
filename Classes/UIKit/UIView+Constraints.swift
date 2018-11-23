@@ -6,6 +6,29 @@ import UIKit
 
 public extension UIView {
     
+    /**
+     Swifty way of adding constraints.
+     
+     *Example 1*
+     
+     let newView = UIView()
+     
+     view.add(subView: newView)
+     
+     newView.pinEdges() // pins to safearea of superview
+     
+     *Example 2*
+     
+     let newView = UIView()
+     
+     view.add(subView: newView)
+     
+     constraintsForSecondLayout = view.pinEdges().setAddedConstraintsInactive().getAddedConstraints() // store for later use
+     
+     constraintsForInitialLayout = view.pin(height: 50).pin(width: 50).pin(on: .left).pin(on: .top).getAddedConstraints() // store for later use
+     
+     }
+     */
     @discardableResult public func pin(on type1: NSLayoutConstraint.Attribute,
                                   view: UIView? = nil, on type2: NSLayoutConstraint.Attribute? = nil,
                                   constant: CGFloat = 0,

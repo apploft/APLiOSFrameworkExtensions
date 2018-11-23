@@ -47,6 +47,13 @@ extension UIViewController {
         //    in order to clear it out from memory
     }
     
+    /**
+     Get quick reference on child view controllers added via storyboard.
+     
+     *Example*
+     
+     var customChildViewController: CustomChildViewController { return child() }
+     */
     public func child<T: UIViewController>() -> T? {
         return children.filter { $0 is T }.first as? T
     }
