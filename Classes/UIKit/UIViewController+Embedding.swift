@@ -46,4 +46,9 @@ extension UIViewController {
         //    Note: don't forget to nullify your own controller instance
         //    in order to clear it out from memory
     }
+    
+    public func child<T: UIViewController>() -> T? {
+        return children.filter { $0 is T }.first as? T
+    }
+    
 }

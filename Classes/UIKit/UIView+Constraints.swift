@@ -1,0 +1,120 @@
+//
+// UIView.swift
+//
+
+import UIKit
+
+public extension UIView {
+    
+    @discardableResult public func pin(on type1: NSLayoutConstraint.Attribute,
+                                  view: UIView? = nil, on type2: NSLayoutConstraint.Attribute? = nil,
+                                  constant: CGFloat = 0,
+                                  priority: Float? = nil) -> UIView {
+        guard let view = view ?? superview?.safeAreaLayoutGuide else {
+            return self
+        }
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        let type2 = type2 ?? type1
+        let constraint = NSLayoutConstraint(item: self, attribute: type1,
+                                            relatedBy: .equal,
+                                            toItem: view, attribute: type2,
+                                            multiplier: 1, constant: constant)
+        if let priority = priority {
+            constraint.priority = UILayoutPriority(priority)
+        }
+        
+        constraint.isActive = true
+        
+        addedConstraints.append(constraint)
+        
+        return self
+    }
+    
+    @discardableResult public func pinEdges(view: UIView? = nil) -> UIView {
+        return pin(on: .top, view: view).pin(on: .bottom, view: view).pin(on: .left, view: view).pin(on: .right, view: view)
+    }
+    
+    @discardableResult public func pin(size: CGSize) -> UIView {
+        return pin(width: size.width).pin(height: size.height)
+    }
+    
+    @discardableResult public func pinSides(view: UIView? = nil, padding: CGFloat) -> UIView {
+        return pin(on: .left, view: view, constant: padding).pin(on: .right, view: view, constant: -padding)
+    }
+    
+    @discardableResult public func pinUpward(view: UIView? = nil) -> UIView {
+        return pin(on: .top, view: view).pin(on: .left, view: view).pin(on: .right, view: view)
+    }
+    
+    @discardableResult public func pinDownward(view: UIView? = nil) -> UIView {
+        return pin(on: .bottom, view: view).pin(on: .left, view: view).pin(on: .right, view: view)
+    }
+    
+    @discardableResult public func pinCenter(view: UIView? = nil) -> UIView {
+        return pin(on: .centerX, view: view).pin(on: .centerY, view: view)
+    }
+    
+    @discardableResult public func pin(width: CGFloat) -> UIView {
+        return pin(constant: width, attribute: .width, relatedBy: .equal)
+    }
+    
+    @discardableResult public func pin(greaterThanWidht width: CGFloat) -> UIView {
+        return pin(constant: width, attribute: .width, relatedBy: .greaterThanOrEqual)
+    }
+    
+    @discardableResult public func pin(lessThanWidht width: CGFloat) -> UIView {
+        return pin(constant: width, attribute: .width, relatedBy: .lessThanOrEqual)
+    }
+    
+    @discardableResult public func pin(height: CGFloat) -> UIView {
+        return pin(constant: height, attribute: .height, relatedBy: .equal)
+    }
+    
+    @discardableResult public func pin(greaterThanHeight height: CGFloat) -> UIView {
+        return pin(constant: height, attribute: .height, relatedBy: .greaterThanOrEqual)
+    }
+    
+    @discardableResult public func pin(lessThanHeight height: CGFloat) -> UIView {
+        return pin(constant: height, attribute: .height, relatedBy: .lessThanOrEqual)
+    }
+    
+    private func pin(constant: CGFloat,
+                     attribute: NSLayoutConstraint.Attribute,
+                     relatedBy: NSLayoutConstraint.Relation) -> UIView {
+        translatesAutoresizingMaskIntoConstraints = false
+        let constraint = NSLayoutConstraint(item: self, attribute: attribute, relatedBy: relatedBy, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: constant)
+        constraint.isActive = true
+        addedConstraints.append(constraint)
+        return self
+    }
+    
+    @discardableResult public func setAddedConstraintsInactive() -> UIView {
+        addedConstraints.forEach { $0.isActive = false }
+        return self
+    }
+    
+    @discardableResult public func getAddedConstraints() -> [NSLayoutConstraint] {
+        let addedConstraints = self.addedConstraints
+        self.addedConstraints = []
+        return addedConstraints
+    }
+    
+}
+
+private extension UIView {
+    
+    private struct AssociatedKeys {
+        static var AddedConstraints = "APLiOSFrameworkExtensions.addedConstraints"
+    }
+    
+    var addedConstraints: [NSLayoutConstraint] {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.AddedConstraints) as? [NSLayoutConstraint] ?? []
+        }
+        
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.AddedConstraints,newValue as [NSLayoutConstraint]?, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+}
