@@ -6,28 +6,41 @@
 
 import UIKit
 
+@available(iOS 11.0, *)
 public extension UITabBarController {
-    
-    public func setTabBarVisible(_ visible:Bool, animated:Bool) {
+    /// Starting with iOS 11 it is possible to show or hide the tabbar
+    /// of a tabbar controller
+    /// - Parameter visible: true to show, false to hide the tabbar
+    /// - Parameter animated: whether or not to animate the change
+    public func setTabBarVisible(_ visible: Bool, animated: Bool) {
         // bail if the current state matches the desired state
-        if (tabBarIsVisible() == visible) { return }
+        guard isTabBarVisible != visible else { return }
         
         // get a frame calculation ready
         let offsetY = tabBar.frame.size.height
         
-        // animate the tabBar
-        UIView.animate(withDuration: animated ? 0.3 : 0.0, animations: {
+        let actionBlock = {
             self.view.frame.size.height += (visible ? -offsetY : offsetY)
             self.view.setNeedsDisplay()
             self.view.layoutIfNeeded()
-        }, completion: { finished in
+        }
+        
+        let completionBlock: (Bool) -> Void = { finished in
             if finished {
                 self.tabBar.isHidden = !visible
             }
-        })
+        }
+        
+        if animated {
+            UIView.animate(withDuration: 0.3, animations: actionBlock, completion: completionBlock)
+        } else {
+            UIView.performWithoutAnimation(actionBlock)
+            completionBlock(true)
+        }
     }
     
-    public func tabBarIsVisible() -> Bool {
+    /// Determine whether or not the tabbar of a tabbar controller is visible
+    public var isTabBarVisible: Bool {
         return view.frame.size.height == view.superview?.frame.size.height
     }
     

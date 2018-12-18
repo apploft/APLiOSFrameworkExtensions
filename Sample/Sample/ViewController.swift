@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import APLiOSFrameworkExtensions
 
 class ViewController: UIViewController {
 
@@ -15,6 +16,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func showHideTabbar(_ sender: Any) {
+        guard let tabBarController = self.tabBarController else { return }
+        
+        tabBarController.setTabBarVisible(!tabBarController.isTabBarVisible, animated: false)
+    }
 }
 
