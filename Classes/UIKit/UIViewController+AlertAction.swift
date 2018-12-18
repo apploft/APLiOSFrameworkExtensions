@@ -10,13 +10,13 @@ public struct AlertButton {
     public let title: String
     public let enabled: Bool
     public let action: () -> Void
-    public var style: UIAlertActionStyle
+    public var style: UIAlertAction.Style
     
     public init(title: String, enabled: Bool = true, action: @escaping () -> Void = {}) {
         self.init(title: title, enabled: enabled, style: .default, action: action)
     }
     
-    public init(title: String, enabled: Bool = true, style: UIAlertActionStyle = .default, action: @escaping () -> Void = {}) {
+    public init(title: String, enabled: Bool = true, style: UIAlertAction.Style = .default, action: @escaping () -> Void = {}) {
         self.title = title
         self.action = action
         self.enabled = enabled

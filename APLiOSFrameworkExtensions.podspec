@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "APLiOSFrameworkExtensions"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "A collection of extensions, helper methods and functions etc."
 
   s.description  = <<-DESC
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
   s.author             = { "Carsten Schlobohm" => "carsten.schlobohm@apploft.de" }
 
-  s.platform     = :ios, "10.0"
+  s.platform     = :ios, "11.0"
 
   s.source       = { :git => "https://github.com/apploft/APLiOSFrameworkExtensions.git", :tag => s.version.to_s }
 

@@ -4,6 +4,7 @@
 
 import UIKit
 
+@available(iOS 11.0, *)
 public extension UIView {
     
     /**
@@ -28,7 +29,7 @@ public extension UIView {
      constraintsForInitialLayout = view.pin(height: 50).pin(width: 50).pin(on: .left).pin(on: .top).getAddedConstraints() // store for later use
      
      }
-     */
+     */    
     @discardableResult public func pin(on type1: NSLayoutConstraint.Attribute,
                                   view: UIView? = nil, on type2: NSLayoutConstraint.Attribute? = nil,
                                   constant: CGFloat = 0,
