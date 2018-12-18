@@ -1,0 +1,6 @@
+framework module APLiOSFrameworkExtensions {
+  umbrella header "APLiOSFrameworkExtensions-umbrella.h"
+
+  export *
+  module * { export * }
+}

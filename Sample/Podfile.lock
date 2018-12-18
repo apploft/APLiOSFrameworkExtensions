@@ -1,0 +1,16 @@
+PODS:
+  - APLiOSFrameworkExtensions (0.0.3)
+
+DEPENDENCIES:
+  - APLiOSFrameworkExtensions (from `..`)
+
+EXTERNAL SOURCES:
+  APLiOSFrameworkExtensions:
+    :path: ".."
+
+SPEC CHECKSUMS:
+  APLiOSFrameworkExtensions: c73fa65da0c8686f9affad5326a18d7513b32fab
+
+PODFILE CHECKSUM: dafe31d4d7402496f463513b58c7d04adff24691
+
+COCOAPODS: 1.5.3

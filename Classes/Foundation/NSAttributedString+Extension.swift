@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import UIKit
 
 public extension NSAttributedString {
     func substitute(with substitution: String) -> NSAttributedString {
