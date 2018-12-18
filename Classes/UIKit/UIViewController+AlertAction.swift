@@ -33,6 +33,17 @@ public struct AlertButton {
 }
 
 public extension UIViewController {
+    
+    public class func presentAlert(withTitle title: String? = nil, message: String? = nil) {
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: NSLocalizedString("Ok", comment: "ok button"), style: .default, handler: nil)
+            
+            alertController.addAction(okAction)
+            UIViewController.topViewController()?.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
     public func alert(title: String?, message: String?, cancelButton: AlertButton, otherButtons: [AlertButton]) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
