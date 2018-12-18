@@ -9,15 +9,16 @@ public extension UIControl {
     /**
      Swifty way of adding actions to buttons. But make sure to avoid retain cycles.
      
-     *Example*
+        *Example*
      
-     let button = UIButton()
+        let button = UIButton()
      
-     button.setAction {
+        button.setAction {
+            print("test")
+        }
      
-        print("test")
-     
-     }
+     - Parameter controlEvents: the control events to trigger action
+     - Parameter action: the action to execute on control event(s)
      */
     public func setAction(for controlEvents: UIControl.Event = .primaryActionTriggered, action: @escaping () -> Void) {
         removeTarget(nil, action: nil, for: .allEvents)
