@@ -5,7 +5,10 @@
 import Foundation
 
 public extension String {
-    
+    /// Create a new string by replacing certain regex patters with another string.
+    /// - Parameter pattern: the regex pattern to replace
+    /// - Parameter replaceWith: the replacement string
+    /// - Returns: a string with the specified pattern matches replaced
     public func stringByRemovingRegexMatches(pattern: String, replaceWith: String = "") -> String {
         do {
             let regex = try NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options.caseInsensitive)
@@ -16,6 +19,9 @@ public extension String {
         }
     }
     
+    /// Determine the capture groups for a given regex.
+    /// - Parameter regex: the regular expression
+    /// - Returns: an array of the capture groups corresponding to the regex
     public func capturedGroups(for regex: String) -> [String] {
         do {
             let regex = try NSRegularExpression(pattern: regex)

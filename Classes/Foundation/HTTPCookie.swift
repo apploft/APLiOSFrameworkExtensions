@@ -5,7 +5,7 @@
 import Foundation
 
 public extension HTTPCookie {
-    
+    /// Stringify an instance of a HTTPCookie    
     public var javaScriptString: String {
         var entries = ["\(name)=\(value)"]
         
@@ -29,5 +29,4 @@ public extension HTTPCookie {
         
         return entries.joined(separator: "; ")
     }
-    
 }
