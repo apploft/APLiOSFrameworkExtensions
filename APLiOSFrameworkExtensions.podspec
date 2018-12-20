@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.swift_version = '4.2'
 
-  s.author             = { "Carsten Schlobohm" => "carsten.schlobohm@apploft.de" }
+  s.authors             = { "Carsten Schlobohm" => "carsten.schlobohm@apploft.de", "Tino Rachui" => "tino.rachui@apploft.de", "Stephan Lerner" => "stephan.lerner@apploft.de" }
 
   s.platform     = :ios, "11.0"
 
