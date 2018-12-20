@@ -17,7 +17,7 @@ public extension WKWebView {
            let source = try? NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue) as String {
             return evaluateJavaScript(source, completionHandler: completionHandler)
         } else {
-            print("User script could not be executed from file '\(filename).\(fileExtension)'")
+            print("User script could not be executed from file '\(filename).\(String(describing: fileExtension))'")
             completionHandler?(nil, NSError.fileNotFound)
         }
     }
