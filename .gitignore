@@ -18,3 +18,4 @@ profile
 .DS_Store
 *.xcworkspacedata
 *.xccheckout
+fastlane/report.xml
