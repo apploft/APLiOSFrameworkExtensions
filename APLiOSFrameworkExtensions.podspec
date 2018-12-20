@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/apploft/APLiOSFrameworkExtensions"
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
-  s.swift_version = '4.0'
+  s.swift_version = '4.2'
 
   s.author             = { "Carsten Schlobohm" => "carsten.schlobohm@apploft.de" }
 
