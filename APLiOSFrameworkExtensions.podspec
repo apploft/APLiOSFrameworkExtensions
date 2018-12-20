@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "APLiOSFrameworkExtensions"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "A collection of extensions, helper methods and functions etc."
 
   s.description  = <<-DESC
