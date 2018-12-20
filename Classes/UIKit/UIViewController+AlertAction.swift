@@ -34,6 +34,12 @@ public struct AlertButton {
 
 public extension UIViewController {
     
+    /// Convenience method in order to present an alert convenientyl from anywhere. The alert will only have
+    /// an "Ok"-button. You can only configure 'title' and 'message'. The method automatically determines the
+    /// top most visible view controller to present the alert.
+    ///
+    /// - Parameter title: the alert title
+    /// - Parameter message: the message to show
     public class func presentAlert(withTitle title: String? = nil, message: String? = nil) {
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

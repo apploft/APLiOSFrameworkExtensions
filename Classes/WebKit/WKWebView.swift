@@ -8,14 +8,17 @@ public extension WKWebView {
     
     typealias JavaScriptCompletionHandler = ((Any?, Error?) -> Void)
     
-    public func executeJavaScriptFile(_ filename: String, completionHandler: JavaScriptCompletionHandler?) {
-        if let path = Bundle.main.path(forResource: filename, ofType: "js"),
-            let source = try? NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue) as String {
-                return evaluateJavaScript(source, completionHandler: completionHandler)
+    /// Execute the specified java script file.
+    /// - Parameter filename: the name of the file containing JavaScript code
+    /// - Parameter fileExtension: optionally the file extension of JavaScript file
+    /// - Parameter completionHandler: optionally a completion handler
+    public func executeJavaScriptFile(_ filename: String, fileExtension: String? = "js", completionHandler: JavaScriptCompletionHandler?) {
+        if let path = Bundle.main.path(forResource: filename, ofType: fileExtension),
+           let source = try? NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue) as String {
+            return evaluateJavaScript(source, completionHandler: completionHandler)
         } else {
-            print("user script could not be executed from file '\(filename).js'")
-            return
+            print("User script could not be executed from file '\(filename).\(fileExtension)'")
+            completionHandler?(nil, NSError.fileNotFound)
         }
     }
-    
 }

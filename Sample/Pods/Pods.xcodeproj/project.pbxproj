@@ -35,7 +35,6 @@
 		BEC83A4EC16DE86395BD855ADA0638CD /* WKUserContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235EAD027A861A5BF37485B9431F1676 /* WKUserContentController.swift */; };
 		BF1F9ABA939EAC3F3252472A1553A9F8 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEE11DA1A032C47B52AE8B39A6459 /* UIViewController.swift */; };
 		CC3801810C51E4B65D4C1E81BCCF6DD4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6EE4DEC4D584734408CBA0D6F077D5 /* String.swift */; };
-		CF3DFACB830054CAAD5CAD214AC5EDA8 /* UISplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3410C92D79E814B98F3919C247C34 /* UISplitViewController.swift */; };
 		D5412ECD241ED7476A7056BC85BB6540 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C686A4A6563E667C08007535004BA867 /* Collection.swift */; };
 		D5E915367682DE5D710119291264CFA6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		D9CD79C5A201AC38E3E20C99E5C8C52E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94335AAA1FD0440EC3F1EA6F0897C3A /* UIColor.swift */; };
@@ -111,7 +110,6 @@
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		96D866EC9DF0CC4C513DE3DB5E1EF2B1 /* Pods-SampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		A47AECFF1381AD881F66CB084DDB3255 /* UIViewController+BackButtonHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonHandler.h"; sourceTree = "<group>"; };
-		A7D3410C92D79E814B98F3919C247C34 /* UISplitViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UISplitViewController.swift; sourceTree = "<group>"; };
 		A94335AAA1FD0440EC3F1EA6F0897C3A /* UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		ACCB7E62DD6A13E355BF790F598B56C1 /* APLiOSFrameworkExtensions-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "APLiOSFrameworkExtensions-prefix.pch"; sourceTree = "<group>"; };
 		B70008B438F6E525DF83E0EB8BC0D9E2 /* Pods-Sample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Sample-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -297,7 +295,6 @@
 				A94335AAA1FD0440EC3F1EA6F0897C3A /* UIColor.swift */,
 				EBD8F899A3DBDE02EAD212E01D38A309 /* UIControl.swift */,
 				F69670D972DAD966171B37ED8E4B54E5 /* UIDevice.swift */,
-				A7D3410C92D79E814B98F3919C247C34 /* UISplitViewController.swift */,
 				78741D35423CBED4583EF367ACE7AB9B /* UITabBarController.swift */,
 				3E0DF64FCE2A2BD4E306948450FFA566 /* UITableView.swift */,
 				5BBE9B8D2F5EC68DB081CF129682E71C /* UIView+Constraints.swift */,
@@ -518,7 +515,6 @@
 				D9CD79C5A201AC38E3E20C99E5C8C52E /* UIColor.swift in Sources */,
 				A67453072B90DF0FABBF1FBAF9FF3185 /* UIControl.swift in Sources */,
 				7171EBB212E639C36084C18830619965 /* UIDevice.swift in Sources */,
-				CF3DFACB830054CAAD5CAD214AC5EDA8 /* UISplitViewController.swift in Sources */,
 				467C8590D62FF13003A0CD9E59BEBB60 /* UITabBarController.swift in Sources */,
 				40BAE3FBE02BD0B57C4CD12F3AD6CEEA /* UITableView.swift in Sources */,
 				8634F408BCC519349F2C9D0D71ADF208 /* UIView+Constraints.swift in Sources */,
