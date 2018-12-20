@@ -13,6 +13,8 @@
 		30F7A34121C920C600998859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30F7A34021C920C600998859 /* Assets.xcassets */; };
 		30F7A34421C920C600998859 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F7A34221C920C600998859 /* LaunchScreen.storyboard */; };
 		30F7A34F21C920C600998859 /* SampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A34E21C920C600998859 /* SampleTests.swift */; };
+		30F7A37A21CBE2FB00998859 /* StoryboardLoadableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F7A37921CBE2FB00998859 /* StoryboardLoadableViewController.storyboard */; };
+		30F7A37C21CBE34B00998859 /* StoryboardLoadableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A37B21CBE34B00998859 /* StoryboardLoadableViewController.swift */; };
 		A4B858D2A7762B266866E363 /* Pods_SampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E5C11139FFDB8BE7213658 /* Pods_SampleTests.framework */; };
 		DA38DDE97A859CE5F27B00F1 /* Pods_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFE028B09166E6B800A1BA07 /* Pods_Sample.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +42,8 @@
 		30F7A34A21C920C600998859 /* SampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30F7A34E21C920C600998859 /* SampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTests.swift; sourceTree = "<group>"; };
 		30F7A35021C920C600998859 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30F7A37921CBE2FB00998859 /* StoryboardLoadableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardLoadableViewController.storyboard; sourceTree = "<group>"; };
+		30F7A37B21CBE34B00998859 /* StoryboardLoadableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoadableViewController.swift; sourceTree = "<group>"; };
 		372604DF20EE95E7E38A73AA /* Pods-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sample/Pods-Sample.release.xcconfig"; sourceTree = "<group>"; };
 		6917138664F4C8728AACFAC4 /* Pods-SampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleTests/Pods-SampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		99E5C11139FFDB8BE7213658 /* Pods_SampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +99,8 @@
 				30F7A34021C920C600998859 /* Assets.xcassets */,
 				30F7A34221C920C600998859 /* LaunchScreen.storyboard */,
 				30F7A34521C920C600998859 /* Info.plist */,
+				30F7A37921CBE2FB00998859 /* StoryboardLoadableViewController.storyboard */,
+				30F7A37B21CBE34B00998859 /* StoryboardLoadableViewController.swift */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
@@ -215,6 +221,7 @@
 			files = (
 				30F7A34421C920C600998859 /* LaunchScreen.storyboard in Resources */,
 				30F7A34121C920C600998859 /* Assets.xcassets in Resources */,
+				30F7A37A21CBE2FB00998859 /* StoryboardLoadableViewController.storyboard in Resources */,
 				30F7A33F21C920C500998859 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30F7A33C21C920C500998859 /* ViewController.swift in Sources */,
+				30F7A37C21CBE34B00998859 /* StoryboardLoadableViewController.swift in Sources */,
 				30F7A33A21C920C500998859 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

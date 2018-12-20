@@ -15,7 +15,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    @IBAction func showStoryboardLoadableViewController(_ sender: Any) {
+        let vc = StoryboardLoadableViewController.instantiate()
+        
+        self.show(vc, sender: self)
+    }
+    
     @IBAction func showHideTabbar(_ sender: Any) {
         guard let tabBarController = self.tabBarController else { return }
         

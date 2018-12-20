@@ -1,5 +1,5 @@
 PODS:
-  - APLiOSFrameworkExtensions (0.0.4)
+  - APLiOSFrameworkExtensions (0.0.5)
 
 DEPENDENCIES:
   - APLiOSFrameworkExtensions (from `..`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ".."
 
 SPEC CHECKSUMS:
-  APLiOSFrameworkExtensions: c4a6970c79c44967e9dfdea542ce44a72f97ae52
+  APLiOSFrameworkExtensions: 53e923fd14a1284b71e7cbb08981e0a86d3f4cba
 
 PODFILE CHECKSUM: 34e2d6581632046f4bc2e38c033907a9a278739f
 
