@@ -16,6 +16,6 @@ profile
 *.moved-aside
 
 .DS_Store
-*.xcworkspacedata
+#*.xcworkspacedata
 *.xccheckout
 fastlane/report.xml
