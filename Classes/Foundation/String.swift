@@ -21,7 +21,7 @@ public extension String {
     
     /// Determine the capture groups for a given regex.
     /// - Parameter regex: the regular expression
-    /// - Returns: an array of the capture groups corresponding to the regex
+    /// - Returns: an array of the capture groups corresponding to the regex            
     public func capturedGroups(for regex: String) -> [String] {
         do {
             let regex = try NSRegularExpression(pattern: regex)

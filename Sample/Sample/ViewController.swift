@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     @IBAction func showHideTabbar(_ sender: Any) {
         guard let tabBarController = self.tabBarController else { return }
         
-        tabBarController.setTabBarVisible(!tabBarController.isTabBarVisible, animated: false)
+        tabBarController.setTabBarVisible(!tabBarController.isTabBarVisible, animated: true)
     }
 }
 
