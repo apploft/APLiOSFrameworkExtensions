@@ -4,21 +4,21 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>APLiOSFrameworkExtensions.xcscheme</key>
+		<key>APLiOSFrameworkExtensions.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>Pods-Sample.xcscheme</key>
+		<key>Pods-Sample.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Pods-SampleTests.xcscheme</key>
+		<key>Pods-SampleTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
