@@ -36,7 +36,7 @@ public struct APLError {
 
 extension APLError.Code {
     
-    /// fileNotFound error custom for APLError
+    /// fileNotFound error code
     static var FileNotFound: APLError.Code {
         return APLError.Code(rawValue: 1000)
     }
