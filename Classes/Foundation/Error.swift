@@ -44,7 +44,7 @@ extension APLError.Code {
 
 public extension NSError {
     
-    /// NSError using APLError structs variables for initializer parameters
+    /// custom fileNotFound error
     public static var fileNotFound: NSError {
         return NSError(domain: APLError.errorDomain, code: APLError.Code.FileNotFound.rawValue, userInfo: nil)
     }
