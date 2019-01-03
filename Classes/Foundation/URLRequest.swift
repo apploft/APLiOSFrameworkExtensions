@@ -5,6 +5,7 @@
 import Foundation
 
 public extension URLRequest {
+    
     /// Return a dictionary of all parameter (query and body) of an URLRequest. 
     public var parameters: [String: String] {
         var parameters = [String: String]()

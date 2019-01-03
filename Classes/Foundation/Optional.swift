@@ -6,6 +6,7 @@
 import Foundation
 
 
+/// A type that is
 protocol _CollectionOrStringish {
     var isEmpty: Bool { get }
 }
@@ -16,6 +17,7 @@ extension Dictionary: _CollectionOrStringish { }
 extension Set: _CollectionOrStringish { }
 
 extension Optional where Wrapped: _CollectionOrStringish {
+    /// returns true if there is no wrapped value.
     var isNilOrEmpty: Bool {
         switch self {
         case let .some(value): return value.isEmpty
@@ -25,6 +27,10 @@ extension Optional where Wrapped: _CollectionOrStringish {
 }
 
 extension Optional {
+    /// Returns value of optional if not nil, otherwise returns the provided default value.
+    ///
+    /// - Parameter defaultValue: value for wrapped optional if it isn't nil
+    /// - Returns: returns value if not nil, otherwise returns value of the passed in parameter
     func value(or defaultValue: Wrapped) -> Wrapped {
         return self ?? defaultValue
     }
@@ -36,7 +42,7 @@ public protocol EmptyValueRepresentable {
     /// Provide the empty value representation of the conforming type.
     static var emptyValue: Self { get }
     
-    /// - returns: `true` if `self` is the empty value.
+    /// `true` if `self` is the empty value.
     var isEmpty: Bool { get }
     
     /// `nil` if `self` is the empty value, `self` otherwise.
@@ -45,29 +51,43 @@ public protocol EmptyValueRepresentable {
 }
 
 extension EmptyValueRepresentable {
+    
+    /// default implementation of protocol method
+    ///
+    /// - Returns: nil if empty, otherwise 'self'
     public func nilIfEmpty() -> Self? {
         return self.isEmpty ? nil : self
     }
 }
 
 extension Array: EmptyValueRepresentable {
+    
+    /// representation for an empty value for an Array
     public static var emptyValue: [Element] { return [] }
 }
 
 extension Set: EmptyValueRepresentable {
+    /// representation for an empty value for a Set
     public static var emptyValue: Set<Element> { return Set() }
 }
 
 extension Dictionary: EmptyValueRepresentable {
+    /// representation for an empty value for a Dictionary
     public static var emptyValue: Dictionary<Key, Value> { return [:] }
 }
 
 extension String: EmptyValueRepresentable {
+    /// representation for an empty value for a String
     public static var emptyValue: String { return "" }
 }
 
 public extension Optional where Wrapped: EmptyValueRepresentable {
-    /// If `self == nil` returns the empty value, otherwise returns the value.
+
+    
+    
+    /// Return empty value or value based on whether or not the value is nil.
+    ///
+    /// - Returns: empty value if `self == nil`, otherwise the value
     public func valueOrEmpty() -> Wrapped {
         switch self {
         case .some(let value):
@@ -77,8 +97,10 @@ public extension Optional where Wrapped: EmptyValueRepresentable {
         }
     }
     
-    /// If `self == nil` returns the empty value, otherwise returns the result of
-    /// mapping `transform` over the value.
+    /// return the empty value or the result of mapping over the value based on whether or not the value is nil
+    ///
+    /// - Parameter transform: closure expression
+    /// - Returns: empty value if `self == nil`, otherwise return the result of mapping `transform` over the value.
     public func mapOrEmpty(_ transform: (Wrapped) -> Wrapped) -> Wrapped {
         switch self {
         case .some(let value):
