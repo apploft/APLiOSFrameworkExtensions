@@ -16,6 +16,7 @@ public struct APLError {
     /// The error code itself.
     public struct Code : RawRepresentable, Hashable {
         
+        /// The raw value to use for the new instance
         public let rawValue: Int
         
         /// - Parameter rawValue: The raw value to use for the new instance.
@@ -34,12 +35,16 @@ public struct APLError {
 }
 
 extension APLError.Code {
+    
+    /// fileNotFound error custom for APLError
     static var FileNotFound: APLError.Code {
         return APLError.Code(rawValue: 1000)
     }
 }
 
 public extension NSError {
+    
+    /// NSError using APLError structs variables for initializer parameters
     public static var fileNotFound: NSError {
         return NSError(domain: APLError.errorDomain, code: APLError.Code.FileNotFound.rawValue, userInfo: nil)
     }

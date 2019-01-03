@@ -5,7 +5,7 @@
 import Foundation
 
 public extension HTTPCookie {
-    /// Stringify an instance of a HTTPCookie            
+    /// Stringify an instance of a HTTPCookie in JavaScript notation
     public var javaScriptString: String {
         var entries = ["\(name)=\(value)"]
         

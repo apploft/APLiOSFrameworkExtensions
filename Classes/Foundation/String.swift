@@ -5,7 +5,7 @@
 import Foundation
 
 public extension String {
-    /// Create a new string by replacing certain regex patters with another string.
+    /// Create a new string by replacing certain regex patterns with another string.
     /// - Parameter pattern: the regex pattern to replace
     /// - Parameter replaceWith: the replacement string
     /// - Returns: a string with the specified pattern matches replaced
