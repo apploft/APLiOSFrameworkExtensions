@@ -7,19 +7,34 @@ import Foundation
 public extension Date {
     enum Month: Int {
         case january = 1
-        case feb = 2
+        case february = 2
+        case march = 3
+        case april = 4
+        case may = 5
+        case june = 6
+        case july = 7
+        case august = 8
+        case september = 9
+        case october = 10
+        case november = 11
+        case december = 12
     }
-    /// A convenience initializer to create a date based on year, month, day etc. information
-    /// Timezone und calendar
-    /// - Parameter year: the year   0 - Int_Max
-    /// - Parameter month: the month
-    /// - Parameter day: the day       1 - 31
-    /// - Parameter hour: the hour     0 - 23
-    /// - Parameter minute: the minute 0 - 59
-    /// - Parameter second: the second 0 - 59
+    /// A convenience initializer to create a date based on year, month, day, minute and second information
+    /// - Parameter year: the year (value range: 0 - 4409620)
+    /// - Parameter month: the month (possibilites specified by 'Month' enum)
+    /// - Parameter day: the day (value range: 0 - 31)
+    /// - Parameter hour: the hour  (value range: 0 - 23)
+    /// - Parameter minute: the minute (value range: 0 - 59)
+    /// - Parameter second: the second (value range: 0 - 59)
+    ///
+    /// The 'calendar' parameter of DateComponents is set to '.gregorian'and the 'timeZone' parameter is set to '.current' in the method implementation.
     public init?(year: Int = 0, month: Month = .january, day: Int = 0, hour: Int = 0, minute: Int = 0, second: Int = 0) {
         // Precondition check
-        assert(day >= 0 && day < 32)
+        assert(year >= 0 && year <= 4409620)
+        assert(day >= 0 && day <= 31)
+        assert(hour >= 1 && hour <= 23)
+        assert(minute >= 1 && minute <= 59)
+        assert(second >= 1 && second <= 59)
         
         var dateComponents = DateComponents()
         

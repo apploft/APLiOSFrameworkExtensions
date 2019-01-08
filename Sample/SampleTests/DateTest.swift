@@ -11,147 +11,318 @@ import XCTest
 class DateTest: XCTestCase {
 
     func testCreateDateAtReferenceDate() {
-        let date = Date(year: 1970, month: 1, day: 1, hour: 1, minute: 0, second: 0)
+        let date = Date(year: 1970, month: .january, day: 1, hour: 1, minute: 0, second: 0)
         let originalDate = Date(timeIntervalSince1970: 0.0)
         
         XCTAssertEqual(date, originalDate)        
     }
     
     func testCreateDateJanuary1st() {
+        let date = Date(year: 1970, month: .january, day: 1, hour: 0, minute: 0, second: 0)
         
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 1
+        dateComponents.month = 1
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
     }
     
     func testCreateDateJanuaryLast() {
+        let date = Date(year: 1970, month: .january, day: 31, hour: 0, minute: 0, second: 0)
         
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 31
+        dateComponents.month = 1
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateFebruary1st() {
+        let date = Date(year: 1970, month: .february, day: 1, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 1
+        dateComponents.month = 2
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateFebruaryLast() {
+        let date = Date(year: 1970, month: .february, day: 28, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 28
+        dateComponents.month = 2
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateMarch1st() {
+        let date = Date(year: 1970, month: .march, day: 1, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 1
+        dateComponents.month = 3
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateMarchLast() {
+        let date = Date(year: 1970, month: .march, day: 31, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 31
+        dateComponents.month = 3
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateApril1st() {
+        let date = Date(year: 1970, month: .april, day: 1, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 1
+        dateComponents.month = 4
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateAprilLast() {
+        let date = Date(year: 1970, month: .april, day: 30, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 30
+        dateComponents.month = 4
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateMay1st() {
+        let date = Date(year: 1970, month: .may, day: 1, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 1
+        dateComponents.month = 5
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateMayLast() {
+        let date = Date(year: 1970, month: .may, day: 31, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 31
+        dateComponents.month = 5
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateJune1st() {
+        let date = Date(year: 1970, month: .june, day: 1, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 1
+        dateComponents.month = 6
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateJuneLast() {
+        let date = Date(year: 1970, month: .june, day: 30, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 30
+        dateComponents.month = 6
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateJuly1st() {
+        let date = Date(year: 1970, month: .july, day: 1, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 1
+        dateComponents.month = 7
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateJulyLast() {
+        let date = Date(year: 1970, month: .july, day: 31, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 31
+        dateComponents.month = 7
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateAugust1st() {
+        let date = Date(year: 1970, month: .august, day: 1, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 1
+        dateComponents.month = 8
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateAugustLast() {
+        let date = Date(year: 1970, month: .august, day: 31, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 31
+        dateComponents.month = 8
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateSeptember1st() {
+        let date = Date(year: 1970, month: .september, day: 1, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 1
+        dateComponents.month = 9
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateSeptemberLast() {
+        let date = Date(year: 1970, month: .september, day: 30, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 30
+        dateComponents.month = 9
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateOctober1st() {
+        let date = Date(year: 1970, month: .october, day: 1, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 1
+        dateComponents.month = 10
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateOctoberLast() {
+        let date = Date(year: 1970, month: .october, day: 31, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 31
+        dateComponents.month = 10
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateNovember1st() {
+        let date = Date(year: 1970, month: .november, day: 1, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 1
+        dateComponents.month = 11
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
+    }
+    
+    func testCreateDateNovemberLast() {
+        let date = Date(year: 1970, month: .november, day: 30, hour: 0, minute: 0, second: 0)
+        
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 30
+        dateComponents.month = 11
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
     }
     
     func testCreateDateDecember1st() {
+        let date = Date(year: 1970, month: .december, day: 1, hour: 0, minute: 0, second: 0)
         
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 1
+        dateComponents.month = 12
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+        
+        XCTAssertEqual(someDateTime, date)
     }
     
     func testCreateDateDecemberLast() {
+        let date = Date(year: 1970, month: .december, day: 31, hour: 0, minute: 0, second: 0)
         
-    }
-    
-    // Date() uses init() defined by Apple which creates a date value based on the current date and time
-    // Therefore, one cannot initialize a date to year: 0, month: 0, day: 0, hour: 0, minute: 0, second: 0 from our Date extension initializer
-    func testDateDefaultInitializer() {
-        let date = Date() // init defined in extension should set
-        print()
-        print(date)
+        var dateComponents = setupDateComponents()
+        dateComponents.day = 31
+        dateComponents.month = 12
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
         
-        let originalDate = Date(year: 0, month: 0, day: 0, hour: 0, minute: 0, second: 0)
-        print(originalDate)
-        XCTAssertEqual(date, originalDate)
+        XCTAssertEqual(someDateTime, date)
     }
     
-    func testDateDefaultInitializerFor() {
-        let date = Date(year: 1)
-        let originalDate = Date(year: 1, month: 0, day: 0, hour: 0, minute: 0, second: 0)
+    
+    func setupDateComponents() -> DateComponents {
+        var dateComponents = DateComponents()
+        dateComponents.year = 1970
+        dateComponents.timeZone = .current
+        dateComponents.hour = 0
+        dateComponents.minute = 0
+        return dateComponents
+    }
+    
+    // format date
+    func formatDate(for date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .medium
         
-        XCTAssertEqual(date, originalDate)
+        dateFormatter.locale = Locale(identifier: "en_US")
+        
+        return dateFormatter.string(from: date)
     }
-    
-    
-    // MARK: limits
-    
-    /*
-    do limits exist:
-    limits for year? limit < 0
-    month > 12? month < 0?
-    day > 31? day < 0?
-    day > 28 in Feb
-    day = 29 in leap years possible?
-    hour > 24? hour < 0?
-    minute > 60? minute < 0?
-    second > 60? second < 0?
-    */
-    
-    // year
-    func testLimitYear() {
-        let date = Date(year: 10000000000, month: 1, day: 1, hour: 1, minute: 1, second: 1)
-        print()
-        print(date)
-        XCTAssert(true)
-    }
-    
-    // month
-    func testMonthLimit() {
-        let date = Date(month: 13)
-        let calendar = Calendar.current
-        let month = calendar.component(.month, from: date)
-        XCTAssertLessThan(month, 13, "month can't be greater than 12")
-    }
-    
-    func testMonthLessNegative() {
-        let date = Date(month: -2)
-        let calendar = Calendar.current
-        let month = calendar.component(.month, from: date)
-        XCTAssertGreaterThan(month, 0, "month can't be negative")
-    }
-    
-    
-    // day
-    func testDayLimit() {
-        let date = Date(day: 32)
-        let calendar = Calendar.current
-        let day = calendar.component(.day, from: date)
-        XCTAssertLessThan(day, 32, "day can't be greater than 12")
-    }
-    
-    func testDayLessNegative() {
-        let date = Date(day: -2)
-        let calendar = Calendar.current
-        let day = calendar.component(.day, from: date)
-        XCTAssertGreaterThan(day, 0, "day can't be negative")
-    }
-    
-    
-    // hour
-    func testHourLimit() {
-        let date = Date(hour: 25)
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        XCTAssertLessThan(hour, 25, "hour can't be greater than 12")
-    }
-    
-    func testHourNegative() {
-        let date = Date(hour: -1)
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        XCTAssertGreaterThan(hour, -1, "hour can't be negative")
-    }
-
-    
-    // second
-    func testSecondLimit() {
-        let date = Date(second: 61)
-        let calendar = Calendar.current
-        let second = calendar.component(.second, from: date)
-        XCTAssertLessThan(second, 61, "second can't be greater than 12")
-    }
-    
-    func testMonthNegative() {
-        let date = Date(second: -1)
-        let calendar = Calendar.current
-        let second = calendar.component(.second, from: date)
-        XCTAssertGreaterThan(second, -1, "second can't be negative")
-    }
-    
-    func testNonLeapYear() {
-        let date = Date(year: 2018, month: 2, day: 29) // not a leap year
-        let calendar = Calendar.current
-        let day = calendar.component(.day, from: date)
-        XCTAssertLessThan(day, 29, "In years which aren't leap years, days should be less than 29")
-    }
-    
-    func testLeapYear() {
-        let date = Date(year: 2020, month: 2, day: 29)
-        let calendar = Calendar.current
-        let day = calendar.component(.day, from: date)
-        XCTAssertEqual(day, 29)
-    }
-    
-    
-
 }
