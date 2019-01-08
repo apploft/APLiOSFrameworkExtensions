@@ -10,12 +10,27 @@ import XCTest
 
 class DateTest: XCTestCase {
 
-    func testDateInitializer() {
+    func testCreateDateAtReferenceDate() {
         let date = Date(year: 1970, month: 1, day: 1, hour: 1, minute: 0, second: 0)
-        let originalDate = Date(timeIntervalSince1970: TimeInterval(exactly: 0)!)
-
+        let originalDate = Date(timeIntervalSince1970: 0.0)
         
-        XCTAssertEqual(date, originalDate)
+        XCTAssertEqual(date, originalDate)        
+    }
+    
+    func testCreateDateJanuary1st() {
+        
+    }
+    
+    func testCreateDateJanuaryLast() {
+        
+    }
+    
+    func testCreateDateDecember1st() {
+        
+    }
+    
+    func testCreateDateDecemberLast() {
+        
     }
     
     // Date() uses init() defined by Apple which creates a date value based on the current date and time
