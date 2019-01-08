@@ -10,10 +10,17 @@ import XCTest
 
 class ArrayTest: XCTestCase {
     
-    func testUniqueArray() {
+    func testUniqueArrayForIntType() {
         let numbers = [1,2,2,2,3,3,3,4,4,5,5,6,6].unique.sorted()
         XCTAssertEqual(numbers, [1,2,3,4,5,6])
     }
+    
+    func testUniqueArrayForStringType() {
+        let numberStrings = ["1", "2", "3", "3", "4", "4"].unique.sorted()
+        XCTAssertEqual(numberStrings, ["1", "2", "3", "4"])
+    }
+    
+    // Soll für verschiedene Datentypen getestet werden? @tino
     
     func testUniqueEmptyArray() {
         let emptyNumbers: [Int] = [].unique.sorted()
