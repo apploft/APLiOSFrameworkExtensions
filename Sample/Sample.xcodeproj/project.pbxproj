@@ -16,7 +16,6 @@
 		30F7A37A21CBE2FB00998859 /* StoryboardLoadableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F7A37921CBE2FB00998859 /* StoryboardLoadableViewController.storyboard */; };
 		30F7A37C21CBE34B00998859 /* StoryboardLoadableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A37B21CBE34B00998859 /* StoryboardLoadableViewController.swift */; };
 		A4B858D2A7762B266866E363 /* Pods_SampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E5C11139FFDB8BE7213658 /* Pods_SampleTests.framework */; };
-		D456541B21DF647E0014A3CA /* CollectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456541A21DF647E0014A3CA /* CollectionTest.swift */; };
 		D456541D21DF663A0014A3CA /* DateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456541C21DF663A0014A3CA /* DateTest.swift */; };
 		D456542D21DFAC870014A3CA /* DispatchQueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456542C21DFAC870014A3CA /* DispatchQueueTest.swift */; };
 		D456542F21DFAF0A0014A3CA /* ErrorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456542E21DFAF0A0014A3CA /* ErrorTest.swift */; };
@@ -54,7 +53,6 @@
 		372604DF20EE95E7E38A73AA /* Pods-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sample/Pods-Sample.release.xcconfig"; sourceTree = "<group>"; };
 		6917138664F4C8728AACFAC4 /* Pods-SampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleTests/Pods-SampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		99E5C11139FFDB8BE7213658 /* Pods_SampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D456541A21DF647E0014A3CA /* CollectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTest.swift; sourceTree = "<group>"; };
 		D456541C21DF663A0014A3CA /* DateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTest.swift; sourceTree = "<group>"; };
 		D456542C21DFAC870014A3CA /* DispatchQueueTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueTest.swift; sourceTree = "<group>"; };
 		D456542E21DFAF0A0014A3CA /* ErrorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTest.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 				D456541C21DF663A0014A3CA /* DateTest.swift */,
 				30F7A35021C920C600998859 /* Info.plist */,
 				D4F4DFF121DE6B250025A1C1 /* ArrayTest.swift */,
-				D456541A21DF647E0014A3CA /* CollectionTest.swift */,
 				D456542C21DFAC870014A3CA /* DispatchQueueTest.swift */,
 				D456542E21DFAF0A0014A3CA /* ErrorTest.swift */,
 				D456543021DFAFE40014A3CA /* HTTPCookieTest.swift */,
@@ -362,7 +359,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D456541B21DF647E0014A3CA /* CollectionTest.swift in Sources */,
 				30F7A34F21C920C600998859 /* ColorBlendingTest.swift in Sources */,
 				D456542D21DFAC870014A3CA /* DispatchQueueTest.swift in Sources */,
 				D4F4DFF221DE6B250025A1C1 /* ArrayTest.swift in Sources */,
@@ -527,6 +523,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZKNRVN92RA;
 				INFOPLIST_FILE = Sample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -546,6 +543,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZKNRVN92RA;
 				INFOPLIST_FILE = Sample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

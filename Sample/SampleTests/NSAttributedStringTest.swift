@@ -11,8 +11,8 @@ import XCTest
 class NSAttributedStringTest: XCTestCase {
 
     func testSubstituteText() {
-        var stringHello = NSAttributedString(string: "hello")
-        var stringWorld = NSAttributedString(string: "world")
+        let stringHello = NSAttributedString(string: "hello")
+        let stringWorld = NSAttributedString(string: "world")
         XCTAssertEqual(stringHello.substituteText(with: "world"), stringWorld)
     }
     

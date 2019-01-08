@@ -9,6 +9,24 @@ public extension Array where Element : Hashable {
     public var unique: [Element] {
         return Array(Set(self))
     }
+    
+    /// Safely access collection elements.
+    ///
+    /// - Parameter index: the index of the element
+    ///
+    /**
+     *Example*
+     
+     let array = ["a", "b"]
+     array[2] // crashes
+     array[safe: 2] // nil
+     
+     // Wie ist es bei Dictionary und Set?
+     */
+    public subscript (safe index: Index) -> Element? {
+        guard indices.contains(index) else { return nil }
+        return self[index]
+    }
 
     /// Safely remove and return the first element if available.
     /// - Returns: the removed element or nil.
