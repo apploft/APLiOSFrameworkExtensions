@@ -122,13 +122,9 @@
 			isa = PBXGroup;
 			children = (
 				D4F4DFF121DE6B250025A1C1 /* ArrayTest.swift */,
-<<<<<<< HEAD
 				30F7A34E21C920C600998859 /* ColorBlendingTest.swift */,
 				D456541C21DF663A0014A3CA /* DateTest.swift */,
 				30F7A35021C920C600998859 /* Info.plist */,
-=======
-				D456541C21DF663A0014A3CA /* DateTest.swift */,
->>>>>>> deba1136a941272fdaa50373ae26432dc20f66b2
 				D456542C21DFAC870014A3CA /* DispatchQueueTest.swift */,
 				D456542E21DFAF0A0014A3CA /* ErrorTest.swift */,
 				D456543021DFAFE40014A3CA /* HTTPCookieTest.swift */,
