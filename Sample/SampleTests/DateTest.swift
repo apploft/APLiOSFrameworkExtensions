@@ -298,13 +298,9 @@ class DateTest: XCTestCase {
     func testCreateDateDecemberLast() {
         let date = Date(year: 1970, month: .december, day: 31, hour: 0, minute: 0, second: 0)
         
-        var dateComponents = setupDateComponents()
-        dateComponents.day = 31
-        dateComponents.month = 12
-        let userCalendar = Calendar.current // user calendar
-        let someDateTime = userCalendar.date(from: dateComponents)
+        let formattedDate = formatDate(for: date ?? Date())
                 
-        XCTAssertEqual(someDateTime, date)
+        XCTAssertEqual(formattedDate, TimeConstants.DecemberLast1970)
     }
     
     // Tino: Eigentlich erzeugt die Methode eine DataComponents Instanz
@@ -323,11 +319,32 @@ class DateTest: XCTestCase {
     func formatDate(for date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .medium
+        dateFormatter.timeStyle = .none
         
         dateFormatter.locale = Locale(identifier: "en_US")
         
         return dateFormatter.string(from: date)
     }
 }
+
+extension DateComponents {
+    
+    /// Initializes DateComponents with day and month parameter. Year is set to 1970, hour and minute are set to 0, and timeZone is the current one.
+    init(day: Int, month: Int) {
+        self.init()
+        self.day = day
+        self.month = month
+        self.year = 1970
+        self.hour = 0
+        self.minute = 0
+        self.timeZone = .current
+    }
+}
+
+struct TimeConstants {
+    static let JanuaryFirst1970 = "Jan 1, 1970"
+    static let DecemberLast1970 = "Dec 31, 1970"
+}
+
+
 

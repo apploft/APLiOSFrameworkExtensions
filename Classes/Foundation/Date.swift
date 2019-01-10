@@ -36,8 +36,8 @@ public extension Date {
         assert(year >= 0 && year <= Date.MaxPossibleYear)
         assert(day >= 0 && day <= 31)
         assert(hour >= 0 && hour <= 23)
-        assert(minute >= 1 && minute <= 59)
-        assert(second >= 1 && second <= 59)
+        assert(minute >= 0 && minute <= 59)
+        assert(second >= 0 && second <= 59)
         
         var dateComponents = DateComponents()
         
