@@ -28,6 +28,13 @@ public extension Array where Element : Hashable {
         return self[index]
     }
 
+}
+
+public extension Array {
+    
+}
+
+public extension Array {
     /// Safely remove and return the first element if available.
     /// - Returns: the removed element or nil.
     public mutating func removeFirstOrNil() -> Element? {
