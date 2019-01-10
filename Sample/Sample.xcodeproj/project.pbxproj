@@ -120,10 +120,10 @@
 		30F7A34D21C920C600998859 /* SampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				D4F4DFF121DE6B250025A1C1 /* ArrayTest.swift */,
 				30F7A34E21C920C600998859 /* ColorBlendingTest.swift */,
 				D456541C21DF663A0014A3CA /* DateTest.swift */,
 				30F7A35021C920C600998859 /* Info.plist */,
-				D4F4DFF121DE6B250025A1C1 /* ArrayTest.swift */,
 				D456542C21DFAC870014A3CA /* DispatchQueueTest.swift */,
 				D456542E21DFAF0A0014A3CA /* ErrorTest.swift */,
 				D456543021DFAFE40014A3CA /* HTTPCookieTest.swift */,
