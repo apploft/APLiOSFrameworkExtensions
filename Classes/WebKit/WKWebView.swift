@@ -18,7 +18,7 @@ public extension WKWebView {
             return evaluateJavaScript(source, completionHandler: completionHandler)
         } else {
             print("User script could not be executed from file '\(filename).\(String(describing: fileExtension))'")
-            completionHandler?(nil, NSError.fileNotFound2)
+            completionHandler?(nil, NSError.fileNotFound)
         }
     }
 }

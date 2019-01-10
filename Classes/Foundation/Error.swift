@@ -21,7 +21,7 @@ enum APLError: Int, Error {
 public extension NSError {
     
     /// custom fileNotFound error
-    public static var fileNotFound2: NSError {
+    public static var fileNotFound: NSError {
         return NSError(domain: APLError.errorDomain, code: APLError.fileNotFound.rawValue, userInfo: nil)
     }
 }
@@ -29,12 +29,12 @@ public extension NSError {
 
 public extension Error {
     /// Assuming this is an instance of NSError return the 'code'
-    public var code2: Int {
+    public var code: Int {
         return (self as NSError).code
     }
     
     /// Assuming this is an instance of NSError return the 'domain'
-    public var domain2: String {
+    public var domain: String {
         return (self as NSError).domain
     }
     
