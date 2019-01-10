@@ -10,40 +10,41 @@ import XCTest
 
 class ArrayTest: XCTestCase {
     
-    func testUniqueArrayForIntType() {
+    func testRemoveDuplicateElementsFromArrayForIntType() {
         let numbers = [1,2,2,2,3,3,3,4,4,5,5,6,6].unique.sorted()
         XCTAssertEqual(numbers, [1,2,3,4,5,6])
     }
     
-    func testUniqueArrayForStringType() {
+    func testRemoveDuplicateElementsFromArrayForStringType() {
         let numberStrings = ["1", "2", "3", "3", "4", "4"].unique.sorted()
         XCTAssertEqual(numberStrings, ["1", "2", "3", "4"])
     }
     
     // Soll für verschiedene Datentypen getestet werden? @tino
     
-    func testUniqueEmptyArray() {
+    func testRemoveDuplicateElementsFromEmptyArray() {
         let emptyNumbers: [Int] = [].unique.sorted()
         XCTAssertEqual(emptyNumbers, [])
     }
     
-    func testRemoveFirstOrNilRemove() {
+    func testRemoveFirstElementFromEmptyArray() {
         var emptyArray: [String] = []
         XCTAssertNil(emptyArray.removeFirstOrNil())
     }
     
-    func testRemoveFirstOrNilFirst() {
+    func testRemoveFirstElementFromArray() {
         var numbers = [1,2,3,4,5]
         _ = numbers.removeFirstOrNil()
         XCTAssertEqual(numbers, [2, 3, 4, 5])
     }
     
-    func testSafeSubscriptingNil() {
+    // if errror is thrown: clean build folder should work
+    func testSafeSubscriptingWhenElementAtIndexNil() {
         let numbers = [1, 2, 3, 4]
         XCTAssertNil(numbers[safe: 4])
     }
     
-    func testSafeSubscriptingNotNil() {
+    func testSafeSubscriptingWhenElementAtIndexNotNil() {
         let numbers = [1, 2, 3, 4]
         XCTAssertNotNil(numbers[safe: 2])
     }

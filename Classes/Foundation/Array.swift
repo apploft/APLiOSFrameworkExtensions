@@ -23,15 +23,7 @@ public extension Array where Element : Hashable {
      
      // Wie ist es bei Dictionary und Set?
      */
-    public subscript (safe index: Index) -> Element? {
-        guard indices.contains(index) else { return nil }
-        return self[index]
-    }
 
-}
-
-public extension Array {
-    
 }
 
 public extension Array {
@@ -40,5 +32,10 @@ public extension Array {
     public mutating func removeFirstOrNil() -> Element? {
         if isEmpty { return nil }
         return removeFirst()
+    }
+    
+    public subscript (safe index: Index) -> Element? {
+        guard indices.contains(index) else { return nil }
+        return self[index]
     }
 }
