@@ -22,10 +22,10 @@ class DispatchQueueTest: XCTestCase {
     
     func testOnceQueueDiffBlock() {
         var number = 0
-        var blockOne: () -> Void = {
+        let blockOne: () -> Void = {
             number += 5
         }
-        var blockTwo: () -> Void = {
+        let blockTwo: () -> Void = {
             number += 100
         }
         DispatchQueue.once(token: "com.apploft.token", block: blockOne)

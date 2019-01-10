@@ -19,8 +19,11 @@ public extension Date {
         case november = 11
         case december = 12
     }
+    
+    static let MaxPossibleYear = 4409620
+    
     /// A convenience initializer to create a date based on year, month, day, minute and second information
-    /// - Parameter year: the year (value range: 0 - 4409620)
+    /// - Parameter year: the year (value range: 0 - MaxPossibleYear)
     /// - Parameter month: the month (possibilites specified by 'Month' enum)
     /// - Parameter day: the day (value range: 0 - 31)
     /// - Parameter hour: the hour  (value range: 0 - 23)
@@ -30,9 +33,9 @@ public extension Date {
     /// The 'calendar' parameter of DateComponents is set to '.gregorian'and the 'timeZone' parameter is set to '.current' in the method implementation.
     public init?(year: Int = 0, month: Month = .january, day: Int = 0, hour: Int = 0, minute: Int = 0, second: Int = 0) {
         // Precondition check
-        assert(year >= 0 && year <= 4409620)
+        assert(year >= 0 && year <= Date.MaxPossibleYear)
         assert(day >= 0 && day <= 31)
-        assert(hour >= 1 && hour <= 23)
+        assert(hour >= 0 && hour <= 23)
         assert(minute >= 1 && minute <= 59)
         assert(second >= 1 && second <= 59)
         

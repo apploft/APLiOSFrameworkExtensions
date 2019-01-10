@@ -11,6 +11,9 @@ public extension String {
     /// - Parameter contentsOf: the url to load from
     /// - Parameter headerFields: specific http header fields to be used for the load
     /// - Parameter maxLength: the maximum length of the created string
+    
+    // Tino: Die Doku sollte erwähnen, dass dieser Initializer blockiert, bis die Daten
+    // geöaden wurden. 
     public init?(contentsOf url: URL, headerFields: [String: String]? = nil, maxLength: Int? = nil) {
         var request = URLRequest(url: url)
         

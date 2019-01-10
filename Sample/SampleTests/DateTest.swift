@@ -65,6 +65,8 @@ class DateTest: XCTestCase {
         XCTAssertEqual(someDateTime, date)
     }
     
+    // Tino: Was passiert am 30. Febr?
+    
     func testCreateDateMarch1st() {
         let date = Date(year: 1970, month: .march, day: 1, hour: 0, minute: 0, second: 0)
         
@@ -301,11 +303,13 @@ class DateTest: XCTestCase {
         dateComponents.month = 12
         let userCalendar = Calendar.current // user calendar
         let someDateTime = userCalendar.date(from: dateComponents)
-        
+                
         XCTAssertEqual(someDateTime, date)
     }
     
-    
+    // Tino: Eigentlich erzeugt die Methode eine DataComponents Instanz
+    // und initialisiert sie mit bestimmten Werten. Das klingt für mich
+    // eher nach einem 'convenience init' aus. 
     func setupDateComponents() -> DateComponents {
         var dateComponents = DateComponents()
         dateComponents.year = 1970
@@ -326,3 +330,4 @@ class DateTest: XCTestCase {
         return dateFormatter.string(from: date)
     }
 }
+
