@@ -14,5 +14,9 @@ class ErrorTest: XCTestCase {
     func testFileNotFoundError() {
         
     }
+    
+//    func throwFileNotFoundAPLError() throws {
+//        throw APLError.fileNotFound
+//    }
 
 }

@@ -9,6 +9,7 @@
 
 import Foundation
 
+
 enum APLError: Int, Error {
     public static var errorDomain: String {
         return "de.apploft"

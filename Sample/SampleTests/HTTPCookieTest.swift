@@ -23,4 +23,5 @@ class HTTPCookieTest: XCTestCase {
             ])
         XCTAssertEqual(httpCookie.javaScriptString, "someName=someValue; domain=somedomain; path=somePath; secure=true")
     }
+    
 }
