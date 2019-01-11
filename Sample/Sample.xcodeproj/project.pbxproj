@@ -22,6 +22,7 @@
 		D456543121DFAFE40014A3CA /* HTTPCookieTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456543021DFAFE40014A3CA /* HTTPCookieTest.swift */; };
 		D456543321DFBD0F0014A3CA /* NSAttributedStringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456543221DFBD0F0014A3CA /* NSAttributedStringTest.swift */; };
 		D4BC4E0F21E8A51C0095864A /* OptionalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BC4E0E21E8A51C0095864A /* OptionalTest.swift */; };
+		D4BC4E1121E8C6040095864A /* StringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BC4E1021E8C6040095864A /* StringTest.swift */; };
 		D4F4DFF221DE6B250025A1C1 /* ArrayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4DFF121DE6B250025A1C1 /* ArrayTest.swift */; };
 		DA38DDE97A859CE5F27B00F1 /* Pods_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFE028B09166E6B800A1BA07 /* Pods_Sample.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		D456543021DFAFE40014A3CA /* HTTPCookieTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPCookieTest.swift; sourceTree = "<group>"; };
 		D456543221DFBD0F0014A3CA /* NSAttributedStringTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringTest.swift; sourceTree = "<group>"; };
 		D4BC4E0E21E8A51C0095864A /* OptionalTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalTest.swift; sourceTree = "<group>"; };
+		D4BC4E1021E8C6040095864A /* StringTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTest.swift; sourceTree = "<group>"; };
 		D4F4DFF121DE6B250025A1C1 /* ArrayTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayTest.swift; sourceTree = "<group>"; };
 		DFE028B09166E6B800A1BA07 /* Pods_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -131,6 +133,7 @@
 				D4BC4E0E21E8A51C0095864A /* OptionalTest.swift */,
 				30F7A34E21C920C600998859 /* ColorBlendingTest.swift */,
 				30F7A35021C920C600998859 /* Info.plist */,
+				D4BC4E1021E8C6040095864A /* StringTest.swift */,
 			);
 			path = SampleTests;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				D4F4DFF221DE6B250025A1C1 /* ArrayTest.swift in Sources */,
 				D4BC4E0F21E8A51C0095864A /* OptionalTest.swift in Sources */,
 				D456542F21DFAF0A0014A3CA /* ErrorTest.swift in Sources */,
+				D4BC4E1121E8C6040095864A /* StringTest.swift in Sources */,
 				D456541D21DF663A0014A3CA /* DateTest.swift in Sources */,
 				D456543121DFAFE40014A3CA /* HTTPCookieTest.swift in Sources */,
 				D456543321DFBD0F0014A3CA /* NSAttributedStringTest.swift in Sources */,
