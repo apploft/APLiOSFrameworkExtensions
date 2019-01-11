@@ -35,5 +35,10 @@ class NSAttributedStringTest: XCTestCase {
         XCTAssertEqual(redString, anotherString.substituteColor(with: .red))
     }
     
-    
+    func testSubstituteColorForDefaultColor() {
+        let defaultColorString = NSAttributedString(string: "string")
+        let redString = NSAttributedString(string: "string", attributes: [.foregroundColor: UIColor.red])
+        
+        XCTAssertEqual(redString, defaultColorString.substituteColor(with: .red))
+    }
 }
