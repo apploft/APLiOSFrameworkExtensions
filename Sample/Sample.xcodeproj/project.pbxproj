@@ -113,7 +113,6 @@
 				30F7A34521C920C600998859 /* Info.plist */,
 				30F7A37921CBE2FB00998859 /* StoryboardLoadableViewController.storyboard */,
 				30F7A37B21CBE34B00998859 /* StoryboardLoadableViewController.swift */,
-				30F7A35021C920C600998859 /* Info.plist */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
@@ -122,14 +121,13 @@
 			isa = PBXGroup;
 			children = (
 				D4F4DFF121DE6B250025A1C1 /* ArrayTest.swift */,
-				30F7A34E21C920C600998859 /* ColorBlendingTest.swift */,
 				D456541C21DF663A0014A3CA /* DateTest.swift */,
-				30F7A35021C920C600998859 /* Info.plist */,
 				D456542C21DFAC870014A3CA /* DispatchQueueTest.swift */,
 				D456542E21DFAF0A0014A3CA /* ErrorTest.swift */,
 				D456543021DFAFE40014A3CA /* HTTPCookieTest.swift */,
 				D456543221DFBD0F0014A3CA /* NSAttributedStringTest.swift */,
 				30F7A34E21C920C600998859 /* ColorBlendingTest.swift */,
+				30F7A35021C920C600998859 /* Info.plist */,
 			);
 			path = SampleTests;
 			sourceTree = "<group>";

@@ -10,7 +10,7 @@ import XCTest
 
 class DispatchQueueTest: XCTestCase {
 
-    func testOnceQueue() {
+    func testDispatchQueueExecutesBlockOnce() {
         var number = 0
         for _ in 0...3 {
             DispatchQueue.once(token: "com.apploft.token") {
@@ -20,7 +20,7 @@ class DispatchQueueTest: XCTestCase {
         XCTAssertEqual(number, 5)
     }
     
-    func testOnceQueueDiffBlock() {
+    func testDispatchQueueExecutesOnceWithUniqueToken() {
         var number = 0
         let blockOne: () -> Void = {
             number += 5
@@ -28,8 +28,8 @@ class DispatchQueueTest: XCTestCase {
         let blockTwo: () -> Void = {
             number += 100
         }
-        DispatchQueue.once(token: "com.apploft.token", block: blockOne)
-        DispatchQueue.once(token: "com.apploft.token", block: blockTwo)
+        DispatchQueue.once(token: "com.apploft.token2", block: blockOne)
+        DispatchQueue.once(token: "com.apploft.token2", block: blockTwo)
         
         XCTAssertEqual(number, 5)
     }
