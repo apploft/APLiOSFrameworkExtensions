@@ -31,6 +31,9 @@ extension Optional {
     ///
     /// - Parameter defaultValue: value for wrapped optional if it isn't nil
     /// - Returns: returns value if not nil, otherwise returns value of the passed in parameter
+    ///
+    /// The method has the same functionality as the '??' nil-coalescing operator bus as a function.
+    /// Use this when code is unreadable due to use of many operators
     func value(or defaultValue: Wrapped) -> Wrapped {
         return self ?? defaultValue
     }
@@ -60,15 +63,15 @@ extension EmptyValueRepresentable {
     }
 }
 
+extension String: EmptyValueRepresentable {
+    /// representation for an empty value for a String
+    public static var emptyValue: String { return "" }
+}
+
 extension Array: EmptyValueRepresentable {
     
     /// representation for an empty value for an Array
     public static var emptyValue: [Element] { return [] }
-}
-
-extension Set: EmptyValueRepresentable {
-    /// representation for an empty value for a Set
-    public static var emptyValue: Set<Element> { return Set() }
 }
 
 extension Dictionary: EmptyValueRepresentable {
@@ -76,10 +79,12 @@ extension Dictionary: EmptyValueRepresentable {
     public static var emptyValue: Dictionary<Key, Value> { return [:] }
 }
 
-extension String: EmptyValueRepresentable {
-    /// representation for an empty value for a String
-    public static var emptyValue: String { return "" }
+extension Set: EmptyValueRepresentable {
+    /// representation for an empty value for a Set
+    public static var emptyValue: Set<Element> { return Set() }
 }
+
+
 
 public extension Optional where Wrapped: EmptyValueRepresentable {
 
