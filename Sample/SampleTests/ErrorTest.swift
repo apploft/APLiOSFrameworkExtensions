@@ -2,21 +2,42 @@
 //  ErrorTest.swift
 //  SampleTests
 //
-//  Created by Philip Krück on 04.01.19.
+//  Created by Philip Krück on 14.01.19.
 //  Copyright © 2019 Tino Rachui. All rights reserved.
 //
 
 import XCTest
+@testable import APLiOSFrameworkExtensions
 
 class ErrorTest: XCTestCase {
 
-    // create a fileNotFound APLError and assert whether raw value is 1000
-    func testFileNotFoundError() {
-        
+    func testErrorDomain() {
+        XCTAssertEqual(APLError.errorDomain, "de.apploft")
     }
     
-//    func throwFileNotFoundAPLError() throws {
-//        throw APLError.fileNotFound
-//    }
+    func testAPLFileNotFoundRawValue() {
+        XCTAssertEqual(APLError.fileNotFound.rawValue, 1000)
+    }
+    
+    func testFileNotFoundNSErrorCode() {
+        XCTAssertEqual(NSError.fileNotFound.code, APLError.fileNotFound.rawValue)
+    }
+    
+    func testFileNotFoundNSErrorDomain() {
+        XCTAssertEqual(NSError.fileNotFound.domain, APLError.errorDomain)
+    }
+    
+    
+    // @tino: Kann ich die folgenden 2 Funktionalitäten Error Extension so testen? Im Prinzip ist das ein 'cast' zwischen NSError und Error.
+    func testErrorCodeFromNSError() {
+        var error = NSError(domain: "de.apploft", code: 1000, userInfo: nil) as Error
+        XCTAssertEqual(error.domain, APLError.errorDomain)
+    }
+    
+    func testErrorDomainFromNSError() {
+        var error = NSError(domain: "de.apploft", code: 1000, userInfo: nil) as Error
+        XCTAssertEqual(error.domain, APLError.errorDomain)
+    }
+    
 
 }

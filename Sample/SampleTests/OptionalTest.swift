@@ -8,6 +8,7 @@
 
 import XCTest
 
+
 class OptionalTest: XCTestCase {
     
     // MARK: test 'isNilOrEmpty'
