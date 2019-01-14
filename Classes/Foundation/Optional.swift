@@ -69,7 +69,6 @@ extension String: EmptyValueRepresentable {
 }
 
 extension Array: EmptyValueRepresentable {
-    
     /// representation for an empty value for an Array
     public static var emptyValue: [Element] { return [] }
 }

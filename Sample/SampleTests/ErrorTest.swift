@@ -30,12 +30,12 @@ class ErrorTest: XCTestCase {
     
     // @tino: Kann ich die folgenden 2 Funktionalitäten Error Extension so testen? Im Prinzip ist das ein 'cast' zwischen NSError und Error.
     func testErrorCodeFromNSError() {
-        var error = NSError(domain: "de.apploft", code: 1000, userInfo: nil) as Error
+        let error = NSError(domain: "de.apploft", code: 1000, userInfo: nil) as Error
         XCTAssertEqual(error.domain, APLError.errorDomain)
     }
     
     func testErrorDomainFromNSError() {
-        var error = NSError(domain: "de.apploft", code: 1000, userInfo: nil) as Error
+        let error = NSError(domain: "de.apploft", code: 1000, userInfo: nil) as Error
         XCTAssertEqual(error.domain, APLError.errorDomain)
     }
     
