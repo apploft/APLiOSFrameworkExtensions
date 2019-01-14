@@ -7,19 +7,15 @@ import Foundation
 
 public extension String {
     /// Initialize a string with the content of a resource specified by the given url. This is
-    /// a failable initializer.
+    /// a failable initializer. The initializer blocks the calling thread until the load has completed or timed out.
     /// - Parameter contentsOf: the url to load from
     /// - Parameter headerFields: specific http header fields to be used for the load
     /// - Parameter maxLength: the maximum length of the created string
-    ///
-    /// The initializer blocks until
     
-    // Tino: Die Doku sollte erwähnen, dass dieser Initializer blockiert, bis die Daten
-    // geladen wurden.
     public init?(contentsOf url: URL, headerFields: [String: String]? = nil, maxLength: Int? = nil) {
         var request = URLRequest(url: url)
         
-        for (key, value) in headerFields ?? [:] {
+        for (key, value) in (headerFields ?? [:]) {
             request.setValue(value, forHTTPHeaderField: key)
         }
         
