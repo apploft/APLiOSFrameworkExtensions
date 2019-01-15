@@ -22,6 +22,7 @@
 		D456543321DFBD0F0014A3CA /* NSAttributedStringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456543221DFBD0F0014A3CA /* NSAttributedStringTest.swift */; };
 		D478DCE221EC74D30002A063 /* ErrorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D478DCE121EC74D30002A063 /* ErrorTest.swift */; };
 		D478DCE821ECABC00002A063 /* String-LoadingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D478DCE721ECABC00002A063 /* String-LoadingTest.swift */; };
+		D478DCEA21ECE7EA0002A063 /* URLRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D478DCE921ECE7EA0002A063 /* URLRequestTest.swift */; };
 		D4BC4E0F21E8A51C0095864A /* OptionalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BC4E0E21E8A51C0095864A /* OptionalTest.swift */; };
 		D4BC4E1121E8C6040095864A /* StringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BC4E1021E8C6040095864A /* StringTest.swift */; };
 		D4F4DFF221DE6B250025A1C1 /* ArrayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4DFF121DE6B250025A1C1 /* ArrayTest.swift */; };
@@ -62,6 +63,7 @@
 		D456543221DFBD0F0014A3CA /* NSAttributedStringTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringTest.swift; sourceTree = "<group>"; };
 		D478DCE121EC74D30002A063 /* ErrorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTest.swift; sourceTree = "<group>"; };
 		D478DCE721ECABC00002A063 /* String-LoadingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-LoadingTest.swift"; sourceTree = "<group>"; };
+		D478DCE921ECE7EA0002A063 /* URLRequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestTest.swift; sourceTree = "<group>"; };
 		D4BC4E0E21E8A51C0095864A /* OptionalTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalTest.swift; sourceTree = "<group>"; };
 		D4BC4E1021E8C6040095864A /* StringTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTest.swift; sourceTree = "<group>"; };
 		D4F4DFF121DE6B250025A1C1 /* ArrayTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayTest.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				30F7A35021C920C600998859 /* Info.plist */,
 				D4BC4E1021E8C6040095864A /* StringTest.swift */,
 				D478DCE721ECABC00002A063 /* String-LoadingTest.swift */,
+				D478DCE921ECE7EA0002A063 /* URLRequestTest.swift */,
 			);
 			path = SampleTests;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 			files = (
 				30F7A34F21C920C600998859 /* ColorBlendingTest.swift in Sources */,
 				D478DCE221EC74D30002A063 /* ErrorTest.swift in Sources */,
+				D478DCEA21ECE7EA0002A063 /* URLRequestTest.swift in Sources */,
 				D456542D21DFAC870014A3CA /* DispatchQueueTest.swift in Sources */,
 				D4F4DFF221DE6B250025A1C1 /* ArrayTest.swift in Sources */,
 				D4BC4E0F21E8A51C0095864A /* OptionalTest.swift in Sources */,
