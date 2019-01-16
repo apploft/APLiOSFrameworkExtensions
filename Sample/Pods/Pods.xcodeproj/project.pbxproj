@@ -36,6 +36,7 @@
 		B38F195507F70C1B64EC94291F31F22E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		C9DBBD634BEDFD5D43600DEDA6A2A06C /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E02227D0462B5C08A65D60BC8B99709 /* Date.swift */; };
 		D44C978E912A26F2F882D892515B66ED /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695A4AD1673961C459BFEDC3C2BEC1D /* NSAttributedString+Extension.swift */; };
+		D44EA41D21EF3ACF009AE696 /* UIBarButtonBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44EA41C21EF3ACF009AE696 /* UIBarButtonBadge.swift */; };
 		D4DBD74F21E659C4005DC29D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DBD74E21E659C4005DC29D /* Error.swift */; };
 		D5977DBAFEAFDB7932C452744CDFF93D /* UIView+Inspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8F6D061D2D5B8A78F464CD012DE01A /* UIView+Inspectable.swift */; };
 		DA81A7B7E15FA29E82C7586FDD333C39 /* UIViewController+BackButtonHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F7CABF307C2137CA92EE6699A0A5F1A /* UIViewController+BackButtonHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -122,6 +123,7 @@
 		BED0494F02A491F4863CA287018E5C8A /* WKWebView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WKWebView.swift; sourceTree = "<group>"; };
 		C0E9003436BF8CB957B060A132FA3071 /* Pods-SampleTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SampleTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		CAF5A68B34BDEB291D88FB9E7ACBC20E /* UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		D44EA41C21EF3ACF009AE696 /* UIBarButtonBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonBadge.swift; sourceTree = "<group>"; };
 		D4DBD74E21E659C4005DC29D /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		D615816B2430767A60732C274DBDF1CA /* Pods-Sample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Sample-dummy.m"; sourceTree = "<group>"; };
 		DB8F6D061D2D5B8A78F464CD012DE01A /* UIView+Inspectable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Inspectable.swift"; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				976347184BC082D493C1BBB3877E77D3 /* ReusableView.swift */,
 				05DE07F0C9C4580FB200A33FE175344D /* StoryboardLoadable.swift */,
 				19AD886739B9A16B0CB2C75FCDE01539 /* UIButton+Extension.swift */,
+				D44EA41C21EF3ACF009AE696 /* UIBarButtonBadge.swift */,
 				AAB1AD795402967AB9A40BCA729619A3 /* UIColor.swift */,
 				83BBB319A307E60B2A80C441D7CEDB1F /* UIControl.swift */,
 				8253319DE34F6059483F6C9A47E3D7BF /* UIDevice.swift */,
@@ -523,6 +526,7 @@
 				1206CD6899FB3C3B2137BF12D42A2382 /* UIColor.swift in Sources */,
 				F43B720EE3829ED00CA1DACEDF864F79 /* UIControl.swift in Sources */,
 				756A67E29D9FD8D8C41174E74E56613C /* UIDevice.swift in Sources */,
+				D44EA41D21EF3ACF009AE696 /* UIBarButtonBadge.swift in Sources */,
 				35EAA2AFE55218A4F80FA9648923430B /* UITabBarController.swift in Sources */,
 				3A4BCFE256498368D9687FB96775ADBA /* UITableView.swift in Sources */,
 				E279318CE715D4EE02013B221FA81A63 /* UIView+Constraints.swift in Sources */,
