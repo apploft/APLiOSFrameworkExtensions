@@ -23,10 +23,18 @@ class URLRequestTest: XCTestCase {
         if let baconIpsumURL = baconIpsumURL {
             var request = URLRequest(url: baconIpsumURL)
             
-            // Wie kann ich headers zum urlrequest hinzufügen?
-            request.setValue("all-meat", forHTTPHeaderField: "type")
+            // some parameter values
+            let organizationName = "apploft"
+            let firstName = "Philip"
+            let lastName = "Krueck"
+            let email = "philip.krueck@apploft.de"
+            
+            
+            let postString = "name=\(organizationName)&firstName=\(firstName)&lastName=\(lastName)&email=\(email)" // which is your parameters
+            request.httpBody = postString.data(using: .utf8)
+            print(request.parameters)
 
-            //XCTAssertEqual(request.parameters, ["callback": "?", "type": "all-meat"])
+            XCTAssertEqual(request.parameters, ["name": organizationName, "firstName": firstName, "lastName": lastName, "email": email, "callback": "?"])
         }
     }
     

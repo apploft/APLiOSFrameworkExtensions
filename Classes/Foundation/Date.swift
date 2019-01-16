@@ -20,7 +20,16 @@ public extension Date {
         case december = 12
     }
     
+    static let MinPossibleYear = 0
     static let MaxPossibleYear = 4409620
+    static let MinPossibleDay = 0
+    static let MaxPossibleDay = 31
+    static let MinPossibleHour = 0
+    static let MaxPossibleHour = 59
+    static let MinPossibleMinute = 0
+    static let MaxPossibleMinute = 59
+    static let MinPossibleSecond = 0
+    static let MaxPossibleSecond = 59
     
     /// A convenience initializer to create a date based on year, month, day, minute and second information
     /// - Parameter year: the year (value range: 0 - MaxPossibleYear)
@@ -40,11 +49,11 @@ public extension Date {
      */
     public init?(year: Int = 0, month: Month = .january, day: Int = 0, hour: Int = 0, minute: Int = 0, second: Int = 0) {
         // Precondition check
-        assert(year >= 0 && year <= Date.MaxPossibleYear)
-        assert(day >= 0 && day <= 31)
-        assert(hour >= 0 && hour <= 23)
-        assert(minute >= 0 && minute <= 59)
-        assert(second >= 0 && second <= 59)
+        assert(year >= Date.MinPossibleYear && year <= Date.MaxPossibleYear)
+        assert(day >= Date.MinPossibleDay && day <= Date.MaxPossibleDay)
+        assert(hour >= Date.MinPossibleHour && hour <= Date.MaxPossibleHour)
+        assert(minute >= Date.MinPossibleMinute && minute <= Date.MaxPossibleHour)
+        assert(second >= Date.MinPossibleSecond && second <= Date.MaxPossibleSecond)
         
         var dateComponents = DateComponents()
         
