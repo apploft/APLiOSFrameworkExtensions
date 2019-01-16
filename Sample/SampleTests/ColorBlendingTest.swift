@@ -1,10 +1,6 @@
 //
-//  SampleTests.swift
-//  SampleTests
-//
-//  Created by Tino Rachui on 18.12.18.
-//  Copyright © 2018 Tino Rachui. All rights reserved.
-//
+// Created by apploft on 18.12.18.
+// Copyright © 2019 apploft GmbH. All rights reserved.
 
 import XCTest
 import APLiOSFrameworkExtensions

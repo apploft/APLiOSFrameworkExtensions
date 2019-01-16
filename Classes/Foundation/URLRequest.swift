@@ -1,6 +1,6 @@
 //
-//  URLRequest.swift
-//
+// Created by apploft on 18.12.18.
+// Copyright © 2019 apploft GmbH. All rights reserved.
 
 import Foundation
 

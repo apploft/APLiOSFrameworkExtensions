@@ -1,6 +1,6 @@
 //
-//  Date.swift
-//
+// Created by apploft on 16.01.19.
+// Copyright © 2019 apploft GmbH. All rights reserved.
 
 import Foundation
 

@@ -1,9 +1,6 @@
 //
-//  URLSession.swift
-//  APLiOSFrameworkExtensions
-//
-//  Created by Tino Rachui on 19.12.18.
-//
+// Created by apploft on 18.12.18.
+// Copyright © 2019 apploft GmbH. All rights reserved.
 
 import Foundation
 

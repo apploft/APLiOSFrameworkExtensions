@@ -1,10 +1,6 @@
 //
-//  DispatchQueueTest.swift
-//  SampleTests
-//
-//  Created by Philip Krück on 04.01.19.
-//  Copyright © 2019 Tino Rachui. All rights reserved.
-//
+// Created by apploft on 04.01.19.
+// Copyright © 2019 apploft GmbH. All rights reserved.
 
 import XCTest
 

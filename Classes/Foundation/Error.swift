@@ -1,11 +1,6 @@
 //
-//  ErrorOptimized?.swift
-//  APLiOSFrameworkExtensions
-//
-//  Created by Philip Krück on 09.01.19.
-//
-
-// maybe this makes more sense than Error.swift? idk
+// Created by apploft on 18.12.18.
+// Copyright © 2019 apploft GmbH. All rights reserved.
 
 import Foundation
 
