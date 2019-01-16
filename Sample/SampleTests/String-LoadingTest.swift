@@ -1,6 +1,6 @@
 //
 // Created by apploft on 14.01.19.
-// Copyright © 2019 apploft GmbH. All rights reserved.
+// Copyright © 2019 apploft GmbH￼￼// MIT License · http://choosealicense.com/licenses/mit/
 //
 // API: https://baconipsum.com/json-api/
 

@@ -1,6 +1,7 @@
 //
 // Created by apploft on 03.01.19.
-// Copyright © 2019 apploft GmbH. All rights reserved.
+// Copyright © 2019 apploft GmbH￼￼ 
+// MIT License · http://choosealicense.com/licenses/mit/ 
 
 import XCTest
 
