@@ -5,6 +5,8 @@
 	<key>FILEHEADER</key>
 	<string> 
 // Created by ___ORGANIZATIONNAME___ on ___DATE___.
-// Copyright © ___YEAR___ ___ORGANIZATIONNAME___ GmbH. All rights reserved.</string>
+// Copyright © ___YEAR___ ___ORGANIZATIONNAME___ GmbH
+// MIT License · http://choosealicense.com/licenses/mit/ 
+</string>
 </dict>
 </plist>
