@@ -1,10 +1,7 @@
 //
-//  StoryboardLoadableViewController.swift
-//  Sample
-//
-//  Created by Tino Rachui on 20.12.18.
-//  Copyright © 2018 Tino Rachui. All rights reserved.
-//
+// Created by apploft on 18.12.18.
+// Copyright © 2019 apploft GmbH.
+// MIT License · http://choosealicense.com/licenses/mit/ 
 
 import UIKit
 import APLiOSFrameworkExtensions

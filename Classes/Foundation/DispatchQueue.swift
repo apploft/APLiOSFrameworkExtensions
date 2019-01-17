@@ -1,14 +1,9 @@
-//
-//  DispatchQueue-Extension.swift
-//
-//  MIT License · http://choosealicense.com/licenses/mit/
+// Credits:
+// https://github.com/future-challenger/Swift3.0/tree/master/GCD
+// MIT License · http://choosealicense.com/licenses/mit/
 
 import Foundation
 
-/*
-	Credits:
-	https://github.com/future-challenger/Swift3.0/tree/master/GCD
-*/
 public extension DispatchQueue {
     
     /// String Array containing the tokens of alread executed threads

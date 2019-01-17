@@ -1,6 +1,7 @@
 //
-//  URLRequest.swift
-//
+// Created by apploft on 18.12.18.
+// Copyright © 2019 apploft GmbH￼￼
+// MIT License · http://choosealicense.com/licenses/mit/ 
 
 import Foundation
 
@@ -30,7 +31,6 @@ public extension URLRequest {
     /// - Returns: true if both instances are equal, false otherwise
     public func isEqual(to: URLRequest?) -> Bool {
         guard let to = to else { return false }
-        
         return (url == to.url) && (httpMethod == to.httpMethod) && (httpBody == to.httpBody) && (httpBodyStream == to.httpBodyStream)
     }
     

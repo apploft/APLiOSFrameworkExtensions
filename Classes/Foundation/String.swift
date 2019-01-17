@@ -1,6 +1,7 @@
 //
-//  String.swift
-//
+// Created by apploft on 18.12.18.
+// Copyright © 2019 apploft GmbH￼￼
+// MIT License · http://choosealicense.com/licenses/mit/ 
 
 import Foundation
 
@@ -9,7 +10,7 @@ public extension String {
     /// - Parameter pattern: the regex pattern to replace
     /// - Parameter replaceWith: the replacement string
     /// - Returns: a string with the specified pattern matches replaced
-    public func stringByRemovingRegexMatches(pattern: String, replaceWith: String = "") -> String {
+    public func removeRegexMatches(pattern: String, replaceWith: String = "") -> String {
         do {
             let regex = try NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options.caseInsensitive)
             let range = NSMakeRange(0, self.count)
@@ -39,5 +40,4 @@ public extension String {
             return []
         }
     }
-    
 }
