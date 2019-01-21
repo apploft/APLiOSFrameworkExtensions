@@ -9,7 +9,7 @@
 //    Uses: https://github.com/roberthein/TinyConstraints
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
     ///    (view, parentView) -> Void
     public typealias LayoutBlock = (UIView, UIView) -> Void
     

@@ -9,7 +9,7 @@ import Foundation
 
 
 /// A type that is
-protocol _CollectionOrStringish {
+public protocol _CollectionOrStringish {
     var isEmpty: Bool { get }
 }
 
@@ -18,7 +18,7 @@ extension Array: _CollectionOrStringish { }
 extension Dictionary: _CollectionOrStringish { }
 extension Set: _CollectionOrStringish { }
 
-extension Optional where Wrapped: _CollectionOrStringish {
+public extension Optional where Wrapped: _CollectionOrStringish {
     /// returns true if there is no wrapped value.
     var isNilOrEmpty: Bool {
         switch self {
@@ -28,7 +28,7 @@ extension Optional where Wrapped: _CollectionOrStringish {
     }
 }
 
-extension Optional {
+public extension Optional {
     /// Returns value of optional if not nil, otherwise returns the provided default value.
     ///
     /// - Parameter defaultValue: value for wrapped optional if it isn't nil
@@ -55,7 +55,7 @@ public protocol EmptyValueRepresentable {
     func nilIfEmpty() -> Self?
 }
 
-extension EmptyValueRepresentable {
+public extension EmptyValueRepresentable {
     
     /// default implementation of protocol method
     ///

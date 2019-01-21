@@ -16,7 +16,7 @@ extension CAShapeLayer
 private var badgeShapeLayerAssociationKey: UInt8 = 0
 private var badgeTextLayerAssociationKey: UInt8 = 1
 
-extension UIBarButtonItem
+public extension UIBarButtonItem
 {
     private var badgeShapeLayer: CAShapeLayer?
     {

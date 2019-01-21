@@ -3,7 +3,7 @@
 //
 import UIKit
 
-extension UITableView {
+public extension UITableView {
     
     /// Given a view determine the index path of the corresponding
     /// table view cell.
