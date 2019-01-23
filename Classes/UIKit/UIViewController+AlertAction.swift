@@ -79,14 +79,14 @@ public extension UIViewController {
         alert(title: title, message: message, cancelButton: okButton, otherButtons: [])
     }
     
-    public func actionSheet(_ title: String? = nil, cancelButton: AlertButton? = nil, destructiveButton: AlertButton? = nil, otherButtons: [AlertButton] = [], _ portraitOnly: Bool = false) {
+    public func actionSheet(_ title: String? = nil, _ message: String? = nil, cancelButton: AlertButton? = nil, destructiveButton: AlertButton? = nil, otherButtons: [AlertButton] = [], _ portraitOnly: Bool = false) {
         let destructiveButtons = destructiveButton.map { [$0] } ?? []
         
-        actionSheet(title, cancelButton: cancelButton, destructiveButtons: destructiveButtons, otherButtons: otherButtons, portraitOnly)
+        actionSheet(title, message, cancelButton: cancelButton, destructiveButtons: destructiveButtons, otherButtons: otherButtons, portraitOnly)
     }
     
-    public func actionSheet(_ title: String? = nil, cancelButton: AlertButton? = nil, destructiveButtons: [AlertButton] = [], otherButtons: [AlertButton] = [], _ portraitOnly: Bool = false) {
-        let alertController = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
+    public func actionSheet(_ title: String? = nil, _ message: String? = nil, cancelButton: AlertButton? = nil, destructiveButtons: [AlertButton] = [], otherButtons: [AlertButton] = [], _ portraitOnly: Bool = false) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         
         if let cancelButton = cancelButton {
             let action = UIAlertAction(title: cancelButton.title, style: .cancel) { (action) in
