@@ -15,6 +15,7 @@
 		2AA44957F9D488B77B93BCC9503CCA02 /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DE07F0C9C4580FB200A33FE175344D /* StoryboardLoadable.swift */; };
 		2D829BA85B403CA58C5B670C87D2E3CE /* Pods-Sample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D615816B2430767A60732C274DBDF1CA /* Pods-Sample-dummy.m */; };
 		301D7DD321FBA24A0066DB92 /* WKHTTPCookieStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301D7DD221FBA24A0066DB92 /* WKHTTPCookieStore.swift */; };
+		30D36F9221FDFCC900B72247 /* AutoMaxLayoutWidthLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D36F9121FDFCC900B72247 /* AutoMaxLayoutWidthLabel.swift */; };
 		35EAA2AFE55218A4F80FA9648923430B /* UITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4418D906B183AF5A74B7B82B388CD6FC /* UITabBarController.swift */; };
 		3A4BCFE256498368D9687FB96775ADBA /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA251D4F67B4D281160D3CE88D8F38 /* UITableView.swift */; };
 		3AACC59DCB2E6BF2EA3F3E0169685E95 /* WKUserContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8418B33C812480D3EA4191647C6EAE /* WKUserContentController.swift */; };
@@ -89,6 +90,7 @@
 		2D8418B33C812480D3EA4191647C6EAE /* WKUserContentController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WKUserContentController.swift; sourceTree = "<group>"; };
 		2E02227D0462B5C08A65D60BC8B99709 /* Date.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		301D7DD221FBA24A0066DB92 /* WKHTTPCookieStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKHTTPCookieStore.swift; sourceTree = "<group>"; };
+		30D36F9121FDFCC900B72247 /* AutoMaxLayoutWidthLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoMaxLayoutWidthLabel.swift; sourceTree = "<group>"; };
 		3242BCD18864610542D42648D06503FF /* URLSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
 		3B1F5047E8EB810A604D3AC7387858B8 /* APLiOSFrameworkExtensions.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = APLiOSFrameworkExtensions.xcconfig; sourceTree = "<group>"; };
 		3C4098631BDA4009DB1AE3DE2D36E18D /* NibLoadable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				3F7CABF307C2137CA92EE6699A0A5F1A /* UIViewController+BackButtonHandler.h */,
 				DDB57EB2187B8D6A634317D5402869C8 /* UIViewController+BackButtonHandler.m */,
 				A8070C8C38D8832C84B4774B874CDE68 /* UIViewController+Embedding.swift */,
+				30D36F9121FDFCC900B72247 /* AutoMaxLayoutWidthLabel.swift */,
 			);
 			name = UIKit;
 			path = Classes/UIKit;
@@ -533,6 +536,7 @@
 				35EAA2AFE55218A4F80FA9648923430B /* UITabBarController.swift in Sources */,
 				3A4BCFE256498368D9687FB96775ADBA /* UITableView.swift in Sources */,
 				301D7DD321FBA24A0066DB92 /* WKHTTPCookieStore.swift in Sources */,
+				30D36F9221FDFCC900B72247 /* AutoMaxLayoutWidthLabel.swift in Sources */,
 				E279318CE715D4EE02013B221FA81A63 /* UIView+Constraints.swift in Sources */,
 				D5977DBAFEAFDB7932C452744CDFF93D /* UIView+Inspectable.swift in Sources */,
 				4E12762BCE65D7916EE6BE6558DE981D /* UIViewController+AlertAction.swift in Sources */,
