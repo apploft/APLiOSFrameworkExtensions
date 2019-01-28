@@ -25,13 +25,16 @@ class URLRequestTest: XCTestCase {
             let firstName = "Philip"
             let lastName = "Krueck"
             let email = "philip.krueck@apploft.de"
-            
-            
-            let postString = "name=\(organizationName)&firstName=\(firstName)&lastName=\(lastName)&email=\(email)" // which is your parameters
+
+            let postString = "name=\(organizationName)&firstName=\(firstName)&lastName=\(lastName)&email=\(email)"
             request.httpBody = postString.data(using: .utf8)
             print(request.parameters)
 
-            XCTAssertEqual(request.parameters, ["name": organizationName, "firstName": firstName, "lastName": lastName, "email": email, "callback": "?"])
+            XCTAssertEqual(request.parameters, ["name": organizationName,
+                                                "firstName": firstName,
+                                                "lastName": lastName,
+                                                "email": email,
+                                                "callback": "?"])
         }
     }
     
@@ -44,4 +47,3 @@ class URLRequestTest: XCTestCase {
     }
 
 }
-

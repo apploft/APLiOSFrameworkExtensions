@@ -6,20 +6,20 @@
 
 import XCTest
 
-class String_LoadingTest: XCTestCase {
-    
+class StringLoadingTest: XCTestCase {
+
     var baconIpsumURL = URL(string: "https://baconipsum.com/api/?callback=?")
-    
+
     func testStringInitFromURLContentsWithAllParameters() {
-        
+
         if let baconIpsumURL = baconIpsumURL {
-            let loremIpsum = String(contentsOf: baconIpsumURL, headerFields: ["type":"all-meat"], maxLength: 100)
+            let loremIpsum = String(contentsOf: baconIpsumURL, headerFields: ["type": "all-meat"], maxLength: 100)
             XCTAssertNotNil(loremIpsum)
         } else {
             XCTAssertNotNil(false)
         }
     }
-    
+
     func testStringInitFromURLContentsWithNoHttpHeaderFieldsParameter() {
         if let baconIpsumURL = baconIpsumURL {
             let loremIpsum = String(contentsOf: baconIpsumURL, maxLength: 100)
@@ -28,10 +28,10 @@ class String_LoadingTest: XCTestCase {
             XCTAssertNotNil(false)
         }
     }
-    
+
     func testStringInitFromURLContentsWithNoMaxLengthParameter() {
         if let apploftURL = URL(string: "www.apploft.de") {
-            let loremIpsum = String(contentsOf: apploftURL, headerFields: ["type":"all-meat"])
+            let loremIpsum = String(contentsOf: apploftURL, headerFields: ["type": "all-meat"])
             XCTAssertNil(loremIpsum)
         } else {
             XCTAssertNil(false)

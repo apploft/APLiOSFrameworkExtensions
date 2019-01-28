@@ -166,21 +166,21 @@ class DateTest: XCTestCase {
     func testCreateDateNovemberLast() {
         let date = Date(year: 1970, month: .november, day: 30, hour: 0, minute: 0, second: 0)
         let referenceDate = Date.fromString("1970-11-30T00:00:00")
-        
+
         XCTAssertEqual(date, referenceDate)
     }
     
     func testCreateDateDecember1st() {
         let date = Date(year: 1970, month: .december, day: 01, hour: 0, minute: 0, second: 0)
         let referenceDate = Date.fromString("1970-12-01T00:00:00")
-        
+
         XCTAssertEqual(date, referenceDate)
     }
-    
+
     func testCreateDateDecemberLast() {
         let date = Date(year: 1970, month: .december, day: 31, hour: 0, minute: 0, second: 0)
         let referenceDate = Date.fromString("1970-12-31T00:00:00")
-        
+
         XCTAssertEqual(date, referenceDate)
     }
 }
@@ -188,14 +188,11 @@ class DateTest: XCTestCase {
 extension Date {
     static func fromString(_ dateString: String) -> Date? {
         let dateFormatter = DateFormatter()
-        
+
         dateFormatter.locale = Locale(identifier: "en_US")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         dateFormatter.timeZone = .current
-        
+
         return dateFormatter.date(from: dateString)
     }
 }
-
-
-

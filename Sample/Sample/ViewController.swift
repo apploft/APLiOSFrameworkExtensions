@@ -11,13 +11,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        testSomeOptionalFunctions()
     }
     @IBAction func showStoryboardLoadableViewController(_ sender: Any) {
-        let vc = StoryboardLoadableViewController.instantiate()
+        let viewController = StoryboardLoadableViewController.instantiate()
         
-        self.show(vc, sender: self)
+        self.show(viewController, sender: self)
     }
     
     @IBAction func showHideTabbar(_ sender: Any) {
@@ -25,10 +23,4 @@ class ViewController: UIViewController {
         
         tabBarController.setTabBarVisible(!tabBarController.isTabBarVisible, animated: true)
     }
-    
-    func testSomeOptionalFunctions() {
-        var string: String?
-        
-    }
 }
-
