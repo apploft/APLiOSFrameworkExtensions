@@ -1,4 +1,6 @@
+
 //    Inspired by:
+//    Stefano Vettor
 //    https://gist.github.com/freedom27/c709923b163e26405f62b799437243f4
 
 import UIKit
