@@ -7,6 +7,7 @@ target 'Sample' do
 
   # Pods for Sample
   pod 'APLiOSFrameworkExtensions', :path => '..'
+  pod 'SwiftLint'
   
   target 'SampleTests' do
     inherit! :search_paths
