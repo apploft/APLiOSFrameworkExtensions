@@ -42,7 +42,7 @@ class URLRequestTest: XCTestCase {
         if let baconIpsumURL = baconIpsumURL {
             let request1 = URLRequest(url: baconIpsumURL)
             let request2 = URLRequest(url: baconIpsumURL)
-            XCTAssert(request1.isEqual(toURL: request2))
+            XCTAssert(request1.isEqual(to: request2))
         }
     }
 

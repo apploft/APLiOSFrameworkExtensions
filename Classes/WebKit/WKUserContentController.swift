@@ -14,7 +14,11 @@ public extension WKUserContentController {
     /// - Parameter arguments: a dictionary of arguments to be replaced in the JavaScript file
     /// - Parmeter injectionTime: the time when the script should be injected into the web page
     /// - Parameter forMainFrameOnly: specifies whether or not the script should be visible in the main frame or not
-    public func addUserScriptFromFile(_ filename: String, fileExtension: String? = "js", withArguments arguments: [String:String] = [:], injectionTime: WKUserScriptInjectionTime = .atDocumentEnd, forMainFrameOnly: Bool = true) {
+    public func addUserScriptFromFile(_ filename: String,
+                                      fileExtension: String? = "js",
+                                      withArguments arguments: [String: String] = [:],
+                                      injectionTime: WKUserScriptInjectionTime = .atDocumentEnd,
+                                      forMainFrameOnly: Bool = true) {
         if let path = Bundle.main.path(forResource: filename, ofType: fileExtension),
             var source = try? NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue) as String {
             

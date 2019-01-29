@@ -32,9 +32,9 @@ public extension UIView {
      }
      */    
     @discardableResult public func pin(on type1: NSLayoutConstraint.Attribute,
-                                  view: UIView? = nil, on type2: NSLayoutConstraint.Attribute? = nil,
-                                  constant: CGFloat = 0,
-                                  priority: Float? = nil) -> UIView {
+                                       view: UIView? = nil, on type2: NSLayoutConstraint.Attribute? = nil,
+                                       constant: CGFloat = 0,
+                                       priority: Float? = nil) -> UIView {
         guard let view = view ?? superview?.safeAreaLayoutGuide else {
             return self
         }
@@ -108,7 +108,12 @@ public extension UIView {
                      attribute: NSLayoutConstraint.Attribute,
                      relatedBy: NSLayoutConstraint.Relation) -> UIView {
         translatesAutoresizingMaskIntoConstraints = false
-        let constraint = NSLayoutConstraint(item: self, attribute: attribute, relatedBy: relatedBy, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: constant)
+        let constraint = NSLayoutConstraint(item: self,
+                                            attribute: attribute,
+                                            relatedBy: relatedBy,
+                                            toItem: nil, attribute: .notAnAttribute,
+                                            multiplier: 1,
+                                            constant: constant)
         constraint.isActive = true
         addedConstraints.append(constraint)
         return self
@@ -139,7 +144,7 @@ private extension UIView {
         }
         
         set {
-            objc_setAssociatedObject(self, &AssociatedKeys.AddedConstraints,newValue as [NSLayoutConstraint]?, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &AssociatedKeys.AddedConstraints, newValue as [NSLayoutConstraint]?, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 }

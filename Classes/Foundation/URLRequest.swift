@@ -29,7 +29,7 @@ public extension URLRequest {
     /// Determine if two instances of URLRequest are equal.
     /// - Parameter to: the other instance. May be nil
     /// - Returns: true if both instances are equal, false otherwise
-    public func isEqual(toURL: URLRequest?) -> Bool {
+    public func isEqual(to toURL: URLRequest?) -> Bool {
         guard let toURL = toURL else { return false }
         return (url == toURL.url) && (httpMethod == toURL.httpMethod) && (httpBody == toURL.httpBody) && (httpBodyStream == toURL.httpBodyStream)
     }

@@ -1,14 +1,12 @@
-
-//    Inspired by:
+//
+//    Credits:
 //    Stefano Vettor
 //    https://gist.github.com/freedom27/c709923b163e26405f62b799437243f4
 
 import UIKit
 
-extension CAShapeLayer
-{
-    func drawRoundedRect(_ rect: CGRect, _ color: UIColor, _ isFilled: Bool)
-    {
+extension CAShapeLayer {
+    func drawRoundedRect(_ rect: CGRect, _ color: UIColor, _ isFilled: Bool) {
         fillColor = isFilled ? color.cgColor : UIColor.white.cgColor
         strokeColor = color.cgColor
         path = UIBezierPath(roundedRect: rect, cornerRadius: 7).cgPath
@@ -18,21 +16,18 @@ extension CAShapeLayer
 private var badgeShapeLayerAssociationKey: UInt8 = 0
 private var badgeTextLayerAssociationKey: UInt8 = 1
 
-public extension UIBarButtonItem
-{
-    private var badgeShapeLayer: CAShapeLayer?
-    {
-        if let b: AnyObject = objc_getAssociatedObject(self, &badgeShapeLayerAssociationKey) as AnyObject? {
-            return b as? CAShapeLayer
+public extension UIBarButtonItem {
+    private var badgeShapeLayer: CAShapeLayer? {
+        if let badge: AnyObject = objc_getAssociatedObject(self, &badgeShapeLayerAssociationKey) as AnyObject? {
+            return badge as? CAShapeLayer
         } else {
             return nil
         }
     }
     
-    private var badgeTextLayer: CATextLayer?
-    {
-        if let b: AnyObject = objc_getAssociatedObject(self, &badgeTextLayerAssociationKey) as AnyObject? {
-            return b as? CATextLayer
+    private var badgeTextLayer: CATextLayer? {
+        if let badge: AnyObject = objc_getAssociatedObject(self, &badgeTextLayerAssociationKey) as AnyObject? {
+            return badge as? CATextLayer
         } else {
             return nil
         }
@@ -48,10 +43,9 @@ public extension UIBarButtonItem
                                badgeOrigin: CGPoint = CGPoint.zero,
                                color: UIColor = UIColor.red,
                                isFilled: Bool = true,
-                               fontSize: CGFloat = 12)
-    {
+                               fontSize: CGFloat = 12) {
         self.removeBadge()
-        if text.count == 0 {
+        if text.isEmpty {
             return
         }
         
@@ -76,7 +70,8 @@ public extension UIBarButtonItem
         labelTextLayer.backgroundColor = UIColor.clear.cgColor
         labelTextLayer.contentsScale = UIScreen.main.scale
         
-        labelTextLayer.frame = CGRect(origin: CGPoint(x: badgeOrigin.x + (badgeSize.width-textSize.width)*0.5, y: -(badgeOrigin.y - (badgeSize.height-textSize.height)*0.5)),
+        labelTextLayer.frame = CGRect(origin: CGPoint(x: badgeOrigin.x + (badgeSize.width-textSize.width)*0.5,
+                                                      y: -(badgeOrigin.y - (badgeSize.height-textSize.height)*0.5)),
                                       size: textSize)
         
         badgeShapeLayer.addSublayer(labelTextLayer)
@@ -96,7 +91,9 @@ public extension UIBarButtonItem
             let badgeOrigin: CGPoint = badgeShapeLayerPath.boundingBox.origin
             let badgeSize: CGSize = badgeShapeLayerPath.boundingBox.size
             badgeTextLayer.string = text
-            badgeTextLayer.frame = CGRect(origin: CGPoint(x: badgeOrigin.x + (badgeSize.width-textSize.width)*0.5, y: badgeTextLayer.frame.origin.y), size: textSize)
+            badgeTextLayer.frame = CGRect(origin: CGPoint(x: badgeOrigin.x + (badgeSize.width-textSize.width)*0.5,
+                                                          y: badgeTextLayer.frame.origin.y),
+                                          size: textSize)
         }
     }
 }
