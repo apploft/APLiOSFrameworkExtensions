@@ -1,5 +1,5 @@
 //
-//  UIViewController+BackButtonHandler.m
+//  Credits
 //
 //  Created by Sergey Nikitenko on 10/1/13.
 //  Copyright 2013 Sergey Nikitenko. All rights reserved.

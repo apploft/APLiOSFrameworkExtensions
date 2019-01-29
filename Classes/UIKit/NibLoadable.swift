@@ -1,5 +1,5 @@
 //
-//  NibLoadable.swift
+//  Credits:
 //  Radiant Tap Essentials
 //	https://github.com/radianttap/swift-essentials
 //
@@ -29,23 +29,20 @@ public extension NibLoadableView where Self: UIView {
 	}
 }
 
-public protocol NibReusableView : ReusableView, NibLoadableView {}
-
-
+public protocol NibReusableView: ReusableView, NibLoadableView {}
 
 ///	Adopt this in cases where you need to create an ad-hoc instance of the given view
 ///	Can be adopted only by classes marked as `final`, due to `Self` constraint
 public protocol NibLoadableFinalView: NibLoadableView {
 	///	Creates an instance of the cell from the `nibName`.xib file
-	static var nibInstance : Self { get }
+	static var nibInstance: Self { get }
 }
 
 public extension NibLoadableFinalView {
-	public static var nibInstance : Self {
+	public static var nibInstance: Self {
 		guard let nibObject = self.nib.instantiate(withOwner: nil, options: nil).last as? Self else {
 			fatalError("Failed to create an instance of \(self) from \(self.nibName) nib.")
 		}
 		return nibObject
 	}
 }
-

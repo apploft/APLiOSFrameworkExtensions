@@ -40,9 +40,11 @@ public extension Date {
     /// - Parameter minute: the minute (value range: 0 - 59)
     /// - Parameter second: the second (value range: 0 - 59)
     ///
-    /// The 'calendar' parameter of DateComponents is set to '.gregorian'and the 'timeZone' parameter is set to '.current' in the method implementation.
+    /// The 'calendar' parameter of DateComponents is set to '.gregorian'and the
+    /// 'timeZone' parameter is set to '.current' in the method implementation.
     ///
-    /// Declaring a date with a day larger than defined in the gregorian calendar system (but still in above specified value range) will create a date in the following month.
+    /// Declaring a date with a day larger than defined in the gregorian calendar system
+    /// (but still in above specified value range) will create a date in the following month.
     /**
      // e.g.
      Date(year: 1970, month: .february, day: 29, hour: 0, minute: 0, second: 0) // --> March 1

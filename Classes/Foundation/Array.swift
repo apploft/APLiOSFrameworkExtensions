@@ -5,7 +5,7 @@
 
 import Foundation
 
-public extension Array where Element : Hashable {
+public extension Array where Element: Hashable {
     /// Returns a new array without duplicate elements.
     public var unique: [Element] {
         return Array(Set(self))
@@ -19,6 +19,7 @@ public extension Array {
         if isEmpty { return nil }
         return removeFirst()
     }
+
     /// Safely access collection elements.
     ///
     /// - Parameter index: the index of the element

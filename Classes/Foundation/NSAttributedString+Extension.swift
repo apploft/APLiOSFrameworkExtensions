@@ -12,7 +12,7 @@ public extension NSAttributedString {
     /// - Returns: a new attributed string with the same attributes but different text
     /// than the original instance
     func substituteText(with substitution: String) -> NSAttributedString {
-        let mutableCopy: NSMutableAttributedString = self.mutableCopy() as! NSMutableAttributedString
+        let mutableCopy: NSMutableAttributedString = self.mutableCopy() as? NSMutableAttributedString ?? NSMutableAttributedString(string: "")
         
         mutableCopy.replaceCharacters(in: NSRange(location: 0, length: self.length), with: substitution)
         
@@ -27,7 +27,7 @@ public extension NSAttributedString {
             return self
         }
         
-        let mutableCopy: NSMutableAttributedString = self.mutableCopy() as! NSMutableAttributedString
+        let mutableCopy: NSMutableAttributedString = self.mutableCopy() as? NSMutableAttributedString ?? NSMutableAttributedString(string: "")
         let fullRange = NSRange(location: 0, length: self.length)
         
         mutableCopy.removeAttribute(.foregroundColor, range: fullRange)
@@ -36,4 +36,3 @@ public extension NSAttributedString {
         return mutableCopy
     }
 }
-

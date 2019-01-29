@@ -1,6 +1,7 @@
 //
-//  UIColor.swift
-//
+// Created by apploft on 18.12.18.
+// Copyright © 2019 apploft GmbH￼￼
+// MIT License · http://choosealicense.com/licenses/mit/ 
 
 import UIKit
 
@@ -13,17 +14,20 @@ public extension UIColor {
     /// - Returns: the blendet color
     static func blend(color1: UIColor, intensity1: CGFloat = 0.5, color2: UIColor, intensity2: CGFloat = 0.5) -> UIColor {
         let total = intensity1 + intensity2
-        let l1 = intensity1/total
-        let l2 = intensity2/total
-        guard l1 > 0 else { return color2}
-        guard l2 > 0 else { return color1}
-        var (r1, g1, b1, a1): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
-        var (r2, g2, b2, a2): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
+        let relativeIntensity1 = intensity1/total
+        let relativeIntensity2 = intensity2/total
+        guard relativeIntensity1 > 0 else { return color2}
+        guard relativeIntensity2 > 0 else { return color1}
+        var (red1, green1, blue1, alpha1): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
+        var (red2, green2, blue2, alpha2): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
         
-        color1.getRed(&r1, green: &g1, blue: &b1, alpha: &a1)
-        color2.getRed(&r2, green: &g2, blue: &b2, alpha: &a2)
+        color1.getRed(&red1, green: &green1, blue: &blue1, alpha: &alpha1)
+        color2.getRed(&red2, green: &green2, blue: &blue2, alpha: &alpha2)
         
-        return UIColor(red: l1*r1 + l2*r2, green: l1*g1 + l2*g2, blue: l1*b1 + l2*b2, alpha: l1*a1 + l2*a2)
+        return UIColor(red: relativeIntensity1*red1 + relativeIntensity2*red2,
+                       green: relativeIntensity1*green1 + relativeIntensity2*green2,
+                       blue: relativeIntensity1*blue1 + relativeIntensity2*blue2,
+                       alpha: relativeIntensity1*alpha1 + relativeIntensity2*alpha2)
     }
     
     /// Create a color lighter by percentage than the original color.
@@ -90,7 +94,7 @@ public extension UIColor {
         let green = CGFloat((hex & 0xFF00) >> 8) / 255.0
         let blue = CGFloat((hex & 0xFF)) / 255.0
         
-        self.init(red:red, green:green, blue:blue, alpha:alpha)
+        self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
     
     /// Return the hex string corresponding to the color instance.

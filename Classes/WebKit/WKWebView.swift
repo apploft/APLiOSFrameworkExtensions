@@ -1,6 +1,7 @@
 //
-//  WKWebView.swift
-//
+// Created by apploft on 18.12.18.
+// Copyright © 2019 apploft GmbH￼￼
+// MIT License · http://choosealicense.com/licenses/mit/ 
 
 import WebKit
 
@@ -12,7 +13,9 @@ public extension WKWebView {
     /// - Parameter filename: the name of the file containing JavaScript code
     /// - Parameter fileExtension: optionally the file extension of JavaScript file
     /// - Parameter completionHandler: optionally a completion handler
-    public func executeJavaScriptFile(_ filename: String, fileExtension: String? = "js", completionHandler: JavaScriptCompletionHandler?) {
+    public func executeJavaScriptFile(_ filename: String,
+                                      fileExtension: String? = "js",
+                                      completionHandler: JavaScriptCompletionHandler?) {
         if let path = Bundle.main.path(forResource: filename, ofType: fileExtension),
            let source = try? NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue) as String {
             return evaluateJavaScript(source, completionHandler: completionHandler)

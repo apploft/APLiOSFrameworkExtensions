@@ -1,2 +1,21 @@
+included: 
+  - ../Classes
+
 disabled_rules: # rule identifiers to exclude from running
 - trailing_whitespace
+- large_tuple
+- syntactic_sugar
+
+line_length: 
+  warning: 150
+  error: 400
+
+opt_in_rules: # some rules are only opt-in
+- empty_count
+- file_header
+
+file_header:
+  included: ".*.swift"
+  required_pattern: "\/\/\n\/\/ (Created by apploft on .*)|Credits.*"
+  message: "Must include valid header"
+  severity: error

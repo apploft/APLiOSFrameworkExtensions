@@ -5,7 +5,6 @@
 
 import Foundation
 
-
 public enum APLError: Int, Error {
     public static var errorDomain: String {
         return "de.apploft"
@@ -14,14 +13,12 @@ public enum APLError: Int, Error {
     case fileNotFound = 1000
 }
 
-
 public extension NSError {
     /// custom fileNotFound error
     public static var fileNotFound: NSError {
         return NSError(domain: APLError.errorDomain, code: APLError.fileNotFound.rawValue, userInfo: nil)
     }
 }
-
 
 public extension Error {
     /// Assuming this is an instance of NSError return the 'code'

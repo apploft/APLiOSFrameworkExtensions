@@ -1,5 +1,5 @@
 //
-//  ReusableView.swift
+//  Credits:
 //  Radiant Tap Essentials
 //	https://github.com/radianttap/swift-essentials
 //
@@ -20,5 +20,3 @@ public extension ReusableView where Self: UIView {
 		return String(describing: self)
 	}
 }
-
-

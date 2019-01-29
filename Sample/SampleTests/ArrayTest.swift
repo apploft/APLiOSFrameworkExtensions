@@ -17,8 +17,6 @@ class ArrayTest: XCTestCase {
         XCTAssertEqual(numberStrings, ["1", "2", "3", "4"])
     }
 
-    // Soll für verschiedene Datentypen getestet werden? @tino
-
     func testRemoveDuplicateElementsFromEmptyArray() {
         let emptyNumbers: [Int] = [].unique.sorted()
         XCTAssertEqual(emptyNumbers, [])

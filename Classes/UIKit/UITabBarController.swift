@@ -1,7 +1,6 @@
 //
-//  UITabBarController.swift
-//
-//  source: http://stackoverflow.com/questions/27008737/how-do-i-hide-show-tabbar-when-tapped-using-swift-in-ios8/27072876#27072876
+// Credits:
+// http://stackoverflow.com/questions/27008737/how-do-i-hide-show-tabbar-when-tapped-using-swift-in-ios8/27072876#27072876
 //
 
 import UIKit

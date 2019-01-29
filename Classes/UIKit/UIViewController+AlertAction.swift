@@ -1,8 +1,7 @@
 //
-//  UIViewController+AlertAction.swift
-//
-//
-
+// Created by apploft on 18.12.18.
+// Copyright © 2019 apploft GmbH￼￼
+// MIT License · http://choosealicense.com/licenses/mit/ 
 
 import UIKit
 
@@ -16,7 +15,10 @@ public struct AlertButton {
         self.init(title: title, enabled: enabled, style: .default, action: action)
     }
     
-    public init(title: String, enabled: Bool = true, style: UIAlertAction.Style = .default, action: @escaping () -> Void = {}) {
+    public init(title: String,
+                enabled: Bool = true,
+                style: UIAlertAction.Style = .default,
+                action: @escaping () -> Void = {}) {
         self.title = title
         self.action = action
         self.enabled = enabled
@@ -43,7 +45,8 @@ public extension UIViewController {
     public class func presentAlert(withTitle title: String? = nil, message: String? = nil) {
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: NSLocalizedString("Ok", comment: "ok button"), style: .default, handler: nil)
+            let okAction = UIAlertAction(title: NSLocalizedString("Ok", comment: "ok button"),
+                                         style: .default, handler: nil)
             
             alertController.addAction(okAction)
             UIViewController.topViewController()?.present(alertController, animated: true, completion: nil)
@@ -53,7 +56,8 @@ public extension UIViewController {
     public func alert(title: String?, message: String?, cancelButton: AlertButton, otherButtons: [AlertButton]) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let cancelAction = UIAlertAction(title: cancelButton.title, style: .cancel) { (action: UIAlertAction!) -> Void in
+        let cancelAction = UIAlertAction(title: cancelButton.title, 
+                                         style: .cancel) { (action: UIAlertAction!) -> Void in
             cancelButton.action()
         }
         alertController.addAction(cancelAction)
@@ -79,13 +83,25 @@ public extension UIViewController {
         alert(title: title, message: message, cancelButton: okButton, otherButtons: [])
     }
     
-    public func actionSheet(_ title: String? = nil, _ message: String? = nil, cancelButton: AlertButton? = nil, destructiveButton: AlertButton? = nil, otherButtons: [AlertButton] = [], _ portraitOnly: Bool = false) {
+    public func actionSheet(_ title: String? = nil,
+                            _ message: String? = nil,
+                            cancelButton: AlertButton? = nil,
+                            destructiveButton: AlertButton? = nil,
+                            otherButtons: [AlertButton] = [],
+                            _ portraitOnly: Bool = false) {
         let destructiveButtons = destructiveButton.map { [$0] } ?? []
         
-        actionSheet(title, message, cancelButton: cancelButton, destructiveButtons: destructiveButtons, otherButtons: otherButtons, portraitOnly)
+        actionSheet(title, message, cancelButton: cancelButton,
+                    destructiveButtons: destructiveButtons,
+                    otherButtons: otherButtons, portraitOnly)
     }
     
-    public func actionSheet(_ title: String? = nil, _ message: String? = nil, cancelButton: AlertButton? = nil, destructiveButtons: [AlertButton] = [], otherButtons: [AlertButton] = [], _ portraitOnly: Bool = false) {
+    public func actionSheet(_ title: String? = nil,
+                            _ message: String? = nil,
+                            cancelButton: AlertButton? = nil,
+                            destructiveButtons: [AlertButton] = [],
+                            otherButtons: [AlertButton] = [],
+                            _ portraitOnly: Bool = false) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         
         if let cancelButton = cancelButton {
@@ -114,5 +130,3 @@ public extension UIViewController {
         present(alertController, animated: true, completion: nil)
     }
 }
-
-
