@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 /// A type that is
 public protocol _CollectionOrStringish {
     var isEmpty: Bool { get }
@@ -40,7 +39,6 @@ public extension Optional {
         return self ?? defaultValue
     }
 }
-
 
 /// A type that has an empty value representation, as opposed to `nil`.
 public protocol EmptyValueRepresentable {
@@ -85,12 +83,8 @@ extension Set: EmptyValueRepresentable {
     public static var emptyValue: Set<Element> { return Set() }
 }
 
-
-
 public extension Optional where Wrapped: EmptyValueRepresentable {
 
-    
-    
     /// Return empty value or value based on whether or not the value is nil.
     ///
     /// - Returns: empty value if `self == nil`, otherwise the value

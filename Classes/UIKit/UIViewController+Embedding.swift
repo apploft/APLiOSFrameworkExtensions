@@ -1,5 +1,5 @@
 //
-//  Embeddable.swift
+//  Credits:
 //  Radiant Tap Essentials
 //    https://github.com/radianttap/swift-essentials
 //
@@ -13,22 +13,21 @@ public extension UIViewController {
     ///    (view, parentView) -> Void
     public typealias LayoutBlock = (UIView, UIView) -> Void
     
-    public func embed<T>(controller vc: T, into parentView: UIView?, layout: LayoutBlock = {
-        v, pv in
-        v.leftAnchor.constraint(equalTo: pv.leftAnchor).isActive = true
-        v.rightAnchor.constraint(equalTo: pv.rightAnchor).isActive = true
-        v.topAnchor.constraint(equalTo: pv.topAnchor).isActive = true
-        v.bottomAnchor.constraint(equalTo: pv.bottomAnchor).isActive = true        
+    public func embed<T>(controller viewController: T, into parentView: UIView?, layout: LayoutBlock = {
+        viewController, parentViewController in
+        viewController.leftAnchor.constraint(equalTo: parentViewController.leftAnchor).isActive = true
+        viewController.rightAnchor.constraint(equalTo: parentViewController.rightAnchor).isActive = true
+        viewController.topAnchor.constraint(equalTo: parentViewController.topAnchor).isActive = true
+        viewController.bottomAnchor.constraint(equalTo: parentViewController.bottomAnchor).isActive = true        
         })
-        where T: UIViewController
-    {
+        where T: UIViewController {
         let container = parentView ?? self.view!
         
-        addChild(vc)
-        container.addSubview(vc.view)
-        vc.view.translatesAutoresizingMaskIntoConstraints = false
-        layout(vc.view, container)
-        vc.didMove(toParent: self)
+        addChild(viewController)
+        container.addSubview(viewController.view)
+        viewController.view.translatesAutoresizingMaskIntoConstraints = false
+        layout(viewController.view, container)
+        viewController.didMove(toParent: self)
         
         //    Note: after this, save the controller reference
         //    somewhere in calling scope

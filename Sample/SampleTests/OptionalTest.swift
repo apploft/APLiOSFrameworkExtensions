@@ -6,7 +6,6 @@
 import XCTest
 @testable import APLiOSFrameworkExtensions
 
-
 class OptionalTest: XCTestCase {
     
     // MARK: test 'isNilOrEmpty'
@@ -32,12 +31,12 @@ class OptionalTest: XCTestCase {
     }
     
     func testIsNilOrEmptyWhenDictionaryIsEmpty() {
-        let emptyDictionaray: [Int:Int]? = [:]
+        let emptyDictionaray: [Int: Int]? = [:]
         XCTAssertTrue(emptyDictionaray.isNilOrEmpty)
     }
     
     func testIsNilOrEmptyWhenDictionaryIsNil() {
-        let nilDictionary: [Int:Int]? = nil
+        let nilDictionary: [Int: Int]? = nil
         XCTAssertTrue(nilDictionary.isNilOrEmpty)
     }
     
@@ -89,7 +88,7 @@ class OptionalTest: XCTestCase {
     }
     
     func testNilIfEmptyWhenDictionaryIsEmpty() {
-        let emptyDictionary: [Int:String] = [:]
+        let emptyDictionary: [Int: String] = [:]
         XCTAssertNil(emptyDictionary.nilIfEmpty())
     }
     
@@ -102,8 +101,7 @@ class OptionalTest: XCTestCase {
         let emptySet: Set<Int> = []
         XCTAssertNil(emptySet.nilIfEmpty())
     }
-    
-    
+
     //: MARK: test 'valueOrEmpty'
     func testValueOrEmptyWhenStringHasValue() {
         let someString: String? = "Hello"
@@ -126,12 +124,12 @@ class OptionalTest: XCTestCase {
     }
     
     func testValueOrEmptyWhenDictionaryHasValue() {
-        let someDictionary: [Int:String]? = [1: "1", 2: "2", 3: "3"]
+        let someDictionary: [Int: String]? = [1: "1", 2: "2", 3: "3"]
         XCTAssertNotNil(someDictionary.valueOrEmpty())
     }
     
     func testValueOrEmptyWhenDictionaryIsNil() {
-        let nilDictionary: [Int:String]? = nil
+        let nilDictionary: [Int: String]? = nil
         XCTAssertEqual(nilDictionary.valueOrEmpty(), [:])
     }
     

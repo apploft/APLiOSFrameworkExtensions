@@ -21,9 +21,7 @@ class SampleTests: XCTestCase {
     func testColorBleding() {
         let red = UIColor.red
         let green = UIColor.green
-        
         let blendetColor = UIColor.blend(color1: red, intensity1: 1.0, color2: green, intensity2: 0.5)
-        
         XCTAssertNotNil(blendetColor)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  StoryboardLoadable.swift
+//  Credits:
 //  Radiant Tap Essentials
 //	https://github.com/radianttap/swift-essentials
 //
@@ -9,12 +9,10 @@
 
 import UIKit
 
-
 public protocol StoryboardLoadable {
 	static var storyboardName: String { get }
 	static var storyboardIdentifier: String { get }
 }
-
 
 public extension StoryboardLoadable where Self: UIViewController {
 
@@ -27,34 +25,33 @@ public extension StoryboardLoadable where Self: UIViewController {
 	}
 
 	public static func instantiate(fromStoryboardNamed name: String? = nil) -> Self {
-		let sb = name ?? self.storyboardName
-		let storyboard = UIStoryboard(name: sb, bundle: nil)
+		let storyB = name ?? self.storyboardName
+		let storyboard = UIStoryboard(name: storyB, bundle: nil)
 		return instantiate(fromStoryboard: storyboard)
 	}
 
 	public static func instantiate(fromStoryboard storyboard: UIStoryboard) -> Self {
 		let identifier = self.storyboardIdentifier
-		guard let vc = storyboard.instantiateViewController(withIdentifier: identifier) as? Self else {
+		guard let viewController = storyboard.instantiateViewController(withIdentifier: identifier) as? Self else {
 			fatalError("Failed to instantiate view controller with identifier=\(identifier) from storyboard \( storyboard )")
 		}
-		return vc
+		return viewController
 
 	}
 	
 	public static func initial(fromStoryboardNamed name: String? = nil) -> Self {
-		let sb = name ?? self.storyboardName
-		let storyboard = UIStoryboard(name: sb, bundle: nil)
+		let storyB = name ?? self.storyboardName
+		let storyboard = UIStoryboard(name: storyB, bundle: nil)
 		return initial(fromStoryboard: storyboard)
 	}
 
 	public static func initial(fromStoryboard storyboard: UIStoryboard) -> Self {
-		guard let vc = storyboard.instantiateInitialViewController() as? Self else {
+		guard let viewController = storyboard.instantiateInitialViewController() as? Self else {
 			fatalError("Failed to instantiate initial view controller from storyboard named \( storyboard )")
 		}
-		return vc
+		return viewController
 	}
 }
-
 
 extension UINavigationController: StoryboardLoadable {}
 extension UITabBarController: StoryboardLoadable {}

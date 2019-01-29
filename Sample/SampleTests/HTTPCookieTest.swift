@@ -7,8 +7,9 @@ import XCTest
 
 class HTTPCookieTest: XCTestCase {
 
-    // create an HTTP cookie and call javaScriptString on it, then assert equal result to expected hardcoded key-value pair string
-    
+    // create an HTTP cookie and call javaScriptString on it, then assert equal
+    // result to expected hardcoded key-value pair string
+
     func testJavaScriptString() {
         let httpCookie: HTTPCookie! = HTTPCookie(properties: [
             .domain: "someDomain",
@@ -20,5 +21,5 @@ class HTTPCookieTest: XCTestCase {
             ])
         XCTAssertEqual(httpCookie.javaScriptString, "someName=someValue; domain=somedomain; path=somePath; secure=true")
     }
-    
+
 }

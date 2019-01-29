@@ -16,7 +16,7 @@ class DispatchQueueTest: XCTestCase {
         }
         XCTAssertEqual(number, 5)
     }
-    
+
     func testDispatchQueueExecutesOnceWithUniqueToken() {
         var number = 0
         let blockOne: () -> Void = {
@@ -27,7 +27,6 @@ class DispatchQueueTest: XCTestCase {
         }
         DispatchQueue.once(token: "com.apploft.token2", block: blockOne)
         DispatchQueue.once(token: "com.apploft.token2", block: blockTwo)
-        
         XCTAssertEqual(number, 5)
     }
 }

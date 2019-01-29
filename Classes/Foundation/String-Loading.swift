@@ -5,7 +5,6 @@
 
 import Foundation
 
-
 public extension String {
     /// Initialize a string with the content of a resource specified by the given url. This is
     /// a failable initializer. The initializer blocks the calling thread until the load has completed or timed out.
@@ -36,5 +35,3 @@ public extension String {
         }
     }
 }
-
-

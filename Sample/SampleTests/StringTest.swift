@@ -12,24 +12,23 @@ class StringTest: XCTestCase {
         let alphabetString = "abcdefghijk"
         XCTAssertEqual(alphabetString.removeRegexMatches(pattern: "d.*"), "abc")
     }
-    
+
     func testStringRemoveRegexMatchesWithEmptyPattern() {
         let alphabetString = "abcdefghijk"
         XCTAssertEqual(alphabetString.removeRegexMatches(pattern: ".*"), "")
     }
-    
-    
+
     //: MARK: test 'capturedGroups(for:)'
     func testCapturedGroupsForMultipleCaptureGroups() {
         let alphabetString = "abcdefghijk"
         XCTAssertEqual(alphabetString.capturedGroups(for: "a(.*)d(.*)g(.*)k"), ["bc", "ef", "hij"])
     }
-    
+
     func testCapturedGroupsForOneGroup() {
         let alphabetString = "abcdefghijk"
         XCTAssertEqual(alphabetString.capturedGroups(for: "e(.*)"), ["fghijk"])
     }
-    
+
     func testCapturedGroupsForNoGrouop() {
         let alphabetString = "abcdefghijk"
         XCTAssertEqual(alphabetString.capturedGroups(for: "d(c.*)"), [])
