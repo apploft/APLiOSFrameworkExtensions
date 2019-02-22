@@ -69,7 +69,7 @@ public extension UIViewController {
     public func alertOk(title: String?, message: String?, completionHandler: @escaping () -> Void) {
         let okButton = AlertButton(title: NSLocalizedString("ok", comment: ""), action: completionHandler)
         
-        alert(title: nil, message: message, cancelButton: okButton, otherButtons: [])
+        alert(title: title, message: message, cancelButton: okButton, otherButtons: [])
     }
     
     public func alertError(title: String?, message: String?, completionHandler: @escaping () -> Void = {}) {
