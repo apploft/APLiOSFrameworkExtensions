@@ -11,7 +11,7 @@ public extension UITabBarController {
     /// of a tabbar controller
     /// - Parameter visible: true to show, false to hide the tabbar
     /// - Parameter animated: whether or not to animate the change
-    public func setTabBarVisible(_ visible: Bool, animated: Bool) {
+    public func setTabBarVisible(_ visible: Bool, animated: Bool, completion: (() -> Void)? = nil) {
         // bail if the current state matches the desired state
         guard isTabBarVisible != visible else { return }
         
@@ -28,10 +28,11 @@ public extension UITabBarController {
             if finished {
                 self.tabBar.isHidden = !visible
             }
+            completion?()
         }
         
         if animated {
-            UIView.animate(withDuration: 0.3, animations: actionBlock, completion: completionBlock)
+            UIView.animate(withDuration: 0.2, animations: actionBlock, completion: completionBlock)
         } else {
             UIView.performWithoutAnimation(actionBlock)
             completionBlock(true)
