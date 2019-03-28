@@ -14,7 +14,7 @@ public extension WKUserContentController {
     /// - Parameter arguments: a dictionary of arguments to be replaced in the JavaScript file
     /// - Parmeter injectionTime: the time when the script should be injected into the web page
     /// - Parameter forMainFrameOnly: specifies whether or not the script should be visible in the main frame or not
-    public func addUserScriptFromFile(_ filename: String,
+    func addUserScriptFromFile(_ filename: String,
                                       fileExtension: String? = "js",
                                       withArguments arguments: [String: String] = [:],
                                       injectionTime: WKUserScriptInjectionTime = .atDocumentEnd,
