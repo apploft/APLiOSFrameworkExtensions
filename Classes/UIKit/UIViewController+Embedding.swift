@@ -11,9 +11,9 @@ import UIKit
 
 public extension UIViewController {
     ///    (view, parentView) -> Void
-    public typealias LayoutBlock = (UIView, UIView) -> Void
+    typealias LayoutBlock = (UIView, UIView) -> Void
     
-    public func embed<T>(controller viewController: T, into parentView: UIView?, layout: LayoutBlock = {
+    func embed<T>(controller viewController: T, into parentView: UIView?, layout: LayoutBlock = {
         viewController, parentViewController in
         viewController.leftAnchor.constraint(equalTo: parentViewController.leftAnchor).isActive = true
         viewController.rightAnchor.constraint(equalTo: parentViewController.rightAnchor).isActive = true
@@ -33,7 +33,7 @@ public extension UIViewController {
         //    somewhere in calling scope
     }
     
-    public func unembed(controller: UIViewController?) {
+    func unembed(controller: UIViewController?) {
         guard let controller = controller else { return }
         
         controller.willMove(toParent: nil)
@@ -53,7 +53,7 @@ public extension UIViewController {
      
         var customChildViewController: CustomChildViewController { return child() }
      */
-    public func child<T: UIViewController>() -> T? {
+    func child<T: UIViewController>() -> T? {
         return children.filter { $0 is T }.first as? T
     }
     

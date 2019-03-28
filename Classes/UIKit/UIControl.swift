@@ -21,7 +21,7 @@ public extension UIControl {
      - Parameter controlEvents: the control events to trigger action
      - Parameter action: the action to execute on control event(s)
      */
-    public func setAction(for controlEvents: UIControl.Event = .primaryActionTriggered, action: @escaping () -> Void) {
+    func setAction(for controlEvents: UIControl.Event = .primaryActionTriggered, action: @escaping () -> Void) {
         removeTarget(nil, action: nil, for: .allEvents)
         let sleeve = ClosureSleeve(attachTo: self, closure: action)
         addTarget(sleeve, action: #selector(ClosureSleeve.invoke), for: controlEvents)

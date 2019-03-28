@@ -12,7 +12,7 @@ public extension String {
     /// - Parameter headerFields: specific http header fields to be used for the load
     /// - Parameter maxLength: the maximum length of the created string
     
-    public init?(contentsOf url: URL, headerFields: [String: String]? = nil, maxLength: Int? = nil) {
+    init?(contentsOf url: URL, headerFields: [String: String]? = nil, maxLength: Int? = nil) {
         var request = URLRequest(url: url)
         
         for (key, value) in (headerFields ?? [:]) {

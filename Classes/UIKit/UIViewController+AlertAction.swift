@@ -39,7 +39,7 @@ public extension UIViewController {
     ///
     /// - Parameter title: the alert title
     /// - Parameter message: the message to show
-    public class func presentAlert(withTitle title: String? = nil, message: String? = nil) {
+    class func presentAlert(withTitle title: String? = nil, message: String? = nil) {
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let okAction = UIAlertAction(title: NSLocalizedString("Ok", comment: "ok button"), style: .default, handler: nil)
@@ -49,7 +49,7 @@ public extension UIViewController {
         }
     }
     
-    public func alert(title: String?, message: String?, cancelButton: AlertButton, otherButtons: [AlertButton]) {
+    func alert(title: String?, message: String?, cancelButton: AlertButton, otherButtons: [AlertButton]) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: cancelButton.title, style: .cancel) { (action: UIAlertAction!) -> Void in
@@ -66,19 +66,19 @@ public extension UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    public func alertOk(title: String?, message: String?, completionHandler: @escaping () -> Void) {
+    func alertOk(title: String?, message: String?, completionHandler: @escaping () -> Void) {
         let okButton = AlertButton(title: NSLocalizedString("ok", comment: ""), action: completionHandler)
         
         alert(title: title, message: message, cancelButton: okButton, otherButtons: [])
     }
     
-    public func alertError(title: String?, message: String?, completionHandler: @escaping () -> Void = {}) {
+    func alertError(title: String?, message: String?, completionHandler: @escaping () -> Void = {}) {
         let okButton = AlertButton(title: NSLocalizedString("ok", comment: ""), action: completionHandler )
         
         alert(title: title, message: message, cancelButton: okButton, otherButtons: [])
     }
     
-    public func actionSheet(_ title: String? = nil,
+    func actionSheet(_ title: String? = nil,
                             _ message: String? = nil,
                             cancelButton: AlertButton? = nil,
                             destructiveButton: AlertButton? = nil,
@@ -89,7 +89,7 @@ public extension UIViewController {
         actionSheet(title, message, cancelButton: cancelButton, destructiveButtons: destructiveButtons, otherButtons: otherButtons, portraitOnly)
     }
     
-    public func actionSheet(_ title: String? = nil,
+    func actionSheet(_ title: String? = nil,
                             _ message: String? = nil,
                             cancelButton: AlertButton? = nil,
                             destructiveButtons: [AlertButton] = [],

@@ -50,7 +50,7 @@ public extension Date {
      Date(year: 1970, month: .february, day: 29, hour: 0, minute: 0, second: 0) // --> March 1
      Date(year: 1970, month: .february, day: 30, hour: 0, minute: 0, second: 0) // --> March 2
      */
-    public init?(year: Int = 0, month: Month = .january, day: Int = 0, hour: Int = 0, minute: Int = 0, second: Int = 0) {
+    init?(year: Int = 0, month: Month = .january, day: Int = 0, hour: Int = 0, minute: Int = 0, second: Int = 0) {
         // Precondition check
         assert(year >= Date.MinPossibleYear && year <= Date.MaxPossibleYear)
         assert(day >= Date.MinPossibleDay && day <= Date.MaxPossibleDay)

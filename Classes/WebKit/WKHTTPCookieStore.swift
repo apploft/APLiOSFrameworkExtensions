@@ -14,7 +14,7 @@ public extension WKHTTPCookieStore {
     /// - Parameter completinHandler: a completion handler which will be called from the main thread
     ///   when the cookie replacement operation has finished
     ///
-    public func setOrReplaceCookies(newCookies: [HTTPCookie]?, completionHandler: (() -> Void)? = nil) {
+    func setOrReplaceCookies(newCookies: [HTTPCookie]?, completionHandler: (() -> Void)? = nil) {
         let cookiesToReplace = newCookies?.map { $0.name }
         let cookieReplaceOpQueue = DispatchQueue(label: "Cookie replace queue")
         let dispatchGroup = DispatchGroup()

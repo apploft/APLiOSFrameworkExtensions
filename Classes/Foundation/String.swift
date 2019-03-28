@@ -10,7 +10,7 @@ public extension String {
     /// - Parameter pattern: the regex pattern to replace
     /// - Parameter replaceWith: the replacement string
     /// - Returns: a string with the specified pattern matches replaced
-    public func removeRegexMatches(pattern: String, replaceWith: String = "") -> String {
+    func removeRegexMatches(pattern: String, replaceWith: String = "") -> String {
         do {
             let regex = try NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options.caseInsensitive)
             let range = NSRange(location: 0, length: self.count) 
@@ -23,7 +23,7 @@ public extension String {
     /// Determine the capture groups for a given regex.
     /// - Parameter regex: the regular expression
     /// - Returns: an array of the capture groups corresponding to the regex            
-    public func capturedGroups(for regex: String) -> [String] {
+    func capturedGroups(for regex: String) -> [String] {
         do {
             let regex = try NSRegularExpression(pattern: regex)
             let nsString = self as NSString

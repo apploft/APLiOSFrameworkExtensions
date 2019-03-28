@@ -11,7 +11,7 @@ public extension UITabBarController {
     /// of a tabbar controller
     /// - Parameter visible: true to show, false to hide the tabbar
     /// - Parameter animated: whether or not to animate the change
-    public func setTabBarVisible(_ visible: Bool, animated: Bool, completion: (() -> Void)? = nil) {
+    func setTabBarVisible(_ visible: Bool, animated: Bool, completion: (() -> Void)? = nil) {
         // bail if the current state matches the desired state
         guard isTabBarVisible != visible else { return }
         
@@ -40,7 +40,7 @@ public extension UITabBarController {
     }
     
     /// Determine whether or not the tabbar of a tabbar controller is visible
-    public var isTabBarVisible: Bool {
+    var isTabBarVisible: Bool {
         return view.frame.size.height == view.superview?.frame.size.height
     }
     

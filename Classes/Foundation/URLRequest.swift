@@ -8,7 +8,7 @@ import Foundation
 public extension URLRequest {
     
     /// Return a dictionary of all parameter (query and body) of an URLRequest. 
-    public var parameters: [String: String] {
+    var parameters: [String: String] {
         var parameters = [String: String]()
         var parameterString = url?.query ?? ""
         
@@ -29,7 +29,7 @@ public extension URLRequest {
     /// Determine if two instances of URLRequest are equal.
     /// - Parameter to: the other instance. May be nil
     /// - Returns: true if both instances are equal, false otherwise
-    public func isEqual(to toURL: URLRequest?) -> Bool {
+    func isEqual(to toURL: URLRequest?) -> Bool {
         guard let toURL = toURL else { return false }
         return (url == toURL.url) && (httpMethod == toURL.httpMethod) && (httpBody == toURL.httpBody) && (httpBodyStream == toURL.httpBodyStream)
     }

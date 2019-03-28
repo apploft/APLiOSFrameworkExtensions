@@ -31,7 +31,7 @@ public extension UIView {
      
      }
      */    
-    @discardableResult public func pin(on type1: NSLayoutConstraint.Attribute,
+    @discardableResult func pin(on type1: NSLayoutConstraint.Attribute,
                                        view: UIView? = nil, on type2: NSLayoutConstraint.Attribute? = nil,
                                        constant: CGFloat = 0,
                                        priority: Float? = nil) -> UIView {
@@ -56,51 +56,51 @@ public extension UIView {
         return self
     }
     
-    @discardableResult public func pinEdges(view: UIView? = nil) -> UIView {
+    @discardableResult func pinEdges(view: UIView? = nil) -> UIView {
         return pin(on: .top, view: view).pin(on: .bottom, view: view).pin(on: .left, view: view).pin(on: .right, view: view)
     }
     
-    @discardableResult public func pin(size: CGSize) -> UIView {
+    @discardableResult func pin(size: CGSize) -> UIView {
         return pin(width: size.width).pin(height: size.height)
     }
     
-    @discardableResult public func pinSides(view: UIView? = nil, padding: CGFloat) -> UIView {
+    @discardableResult func pinSides(view: UIView? = nil, padding: CGFloat) -> UIView {
         return pin(on: .left, view: view, constant: padding).pin(on: .right, view: view, constant: -padding)
     }
     
-    @discardableResult public func pinUpward(view: UIView? = nil) -> UIView {
+    @discardableResult func pinUpward(view: UIView? = nil) -> UIView {
         return pin(on: .top, view: view).pin(on: .left, view: view).pin(on: .right, view: view)
     }
     
-    @discardableResult public func pinDownward(view: UIView? = nil) -> UIView {
+    @discardableResult func pinDownward(view: UIView? = nil) -> UIView {
         return pin(on: .bottom, view: view).pin(on: .left, view: view).pin(on: .right, view: view)
     }
     
-    @discardableResult public func pinCenter(view: UIView? = nil) -> UIView {
+    @discardableResult func pinCenter(view: UIView? = nil) -> UIView {
         return pin(on: .centerX, view: view).pin(on: .centerY, view: view)
     }
     
-    @discardableResult public func pin(width: CGFloat) -> UIView {
+    @discardableResult func pin(width: CGFloat) -> UIView {
         return pin(constant: width, attribute: .width, relatedBy: .equal)
     }
     
-    @discardableResult public func pin(greaterThanWidht width: CGFloat) -> UIView {
+    @discardableResult func pin(greaterThanWidht width: CGFloat) -> UIView {
         return pin(constant: width, attribute: .width, relatedBy: .greaterThanOrEqual)
     }
     
-    @discardableResult public func pin(lessThanWidht width: CGFloat) -> UIView {
+    @discardableResult func pin(lessThanWidht width: CGFloat) -> UIView {
         return pin(constant: width, attribute: .width, relatedBy: .lessThanOrEqual)
     }
     
-    @discardableResult public func pin(height: CGFloat) -> UIView {
+    @discardableResult func pin(height: CGFloat) -> UIView {
         return pin(constant: height, attribute: .height, relatedBy: .equal)
     }
     
-    @discardableResult public func pin(greaterThanHeight height: CGFloat) -> UIView {
+    @discardableResult func pin(greaterThanHeight height: CGFloat) -> UIView {
         return pin(constant: height, attribute: .height, relatedBy: .greaterThanOrEqual)
     }
     
-    @discardableResult public func pin(lessThanHeight height: CGFloat) -> UIView {
+    @discardableResult func pin(lessThanHeight height: CGFloat) -> UIView {
         return pin(constant: height, attribute: .height, relatedBy: .lessThanOrEqual)
     }
     
@@ -119,12 +119,12 @@ public extension UIView {
         return self
     }
     
-    @discardableResult public func setAddedConstraintsInactive() -> UIView {
+    @discardableResult func setAddedConstraintsInactive() -> UIView {
         addedConstraints.forEach { $0.isActive = false }
         return self
     }
     
-    @discardableResult public func getAddedConstraints() -> [NSLayoutConstraint] {
+    @discardableResult func getAddedConstraints() -> [NSLayoutConstraint] {
         let addedConstraints = self.addedConstraints
         self.addedConstraints = []
         return addedConstraints

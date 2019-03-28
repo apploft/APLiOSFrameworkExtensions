@@ -33,21 +33,21 @@ public extension UIColor {
     /// Create a color lighter by percentage than the original color.
     /// - Parameter percentage: the percentage by which the color should be lighter
     /// - Returns: a lighter color
-    public func lighter(by percentage: CGFloat = 30.0) -> UIColor? {
+    func lighter(by percentage: CGFloat = 30.0) -> UIColor? {
         return self.adjust(by: abs(percentage) )
     }
     
     /// Create a color darker by percentage than the original color.
     /// - Parameter percentage: the percentage by which the color should be darker
     /// - Returns: a darker color
-    public func darker(by percentage: CGFloat = 30.0) -> UIColor? {
+    func darker(by percentage: CGFloat = 30.0) -> UIColor? {
         return self.adjust(by: -1 * abs(percentage) )
     }
     
     /// Adjust all color components by a certain percentage.
     /// - Parameter percentage: the percentage by which to adjust the color coponents.
     /// - Returns: a color adjusted by a certain percentage
-    public func adjust(by percentage: CGFloat = 30.0) -> UIColor? {
+    func adjust(by percentage: CGFloat = 30.0) -> UIColor? {
         var red: CGFloat = 0, green: CGFloat = 0, blue: CGFloat = 0, alpha: CGFloat = 0
         if self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
             return UIColor(red: min(red + percentage/100, 1.0),
@@ -64,7 +64,7 @@ public extension UIColor {
     /// Make an image out of a color.
     /// - Parameter size: the size of the resulting image.
     /// - Returns: the image created from the color
-    public func toImage(withSize size: CGSize) -> UIImage {
+    func toImage(withSize size: CGSize) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()

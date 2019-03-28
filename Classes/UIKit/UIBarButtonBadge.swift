@@ -34,11 +34,11 @@ public extension UIBarButtonItem {
     }
     
     // Remove all layers from the layer hierarchy
-    @objc public func removeBadge() {
+    @objc func removeBadge() {
         badgeShapeLayer?.removeFromSuperlayer()
     }
     
-    @objc public func setBadge(text: String = "",
+    @objc func setBadge(text: String = "",
                                badgeSize: CGSize = CGSize(width: 20.0, height: 20.0),
                                badgeOrigin: CGPoint = CGPoint.zero,
                                color: UIColor = UIColor.red,
@@ -81,11 +81,11 @@ public extension UIBarButtonItem {
         objc_setAssociatedObject(self, &badgeTextLayerAssociationKey, labelTextLayer, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
     
-    @objc public func isHidden(_ isHidden: Bool) {
+    @objc func isHidden(_ isHidden: Bool) {
         badgeShapeLayer?.isHidden = isHidden
     }
     
-    @objc public func updateBadge(text: String = "") {
+    @objc func updateBadge(text: String = "") {
         if let badgeShapeLayerPath = badgeShapeLayer?.path, let badgeTextLayer = badgeTextLayer, let font = badgeTextLayer.font {
             let textSize = text.size(withAttributes: [NSAttributedString.Key.font: font])
             let badgeOrigin: CGPoint = badgeShapeLayerPath.boundingBox.origin

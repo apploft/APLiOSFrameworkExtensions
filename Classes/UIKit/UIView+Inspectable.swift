@@ -9,7 +9,7 @@ import QuartzCore
 
 public extension UIView {
     
-    @IBInspectable public var cornerRadius: CGFloat {
+    @IBInspectable var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
         }
@@ -18,7 +18,7 @@ public extension UIView {
             layer.masksToBounds = newValue > 0
         }
     }
-    @IBInspectable public var cornerIsCircle: Bool {
+    @IBInspectable var cornerIsCircle: Bool {
         get {
             return cornerRadius == min(bounds.size.width, bounds.size.height) / 2.0
         }
@@ -28,7 +28,7 @@ public extension UIView {
             }
         }
     }
-    @IBInspectable public var borderWidth: CGFloat {
+    @IBInspectable var borderWidth: CGFloat {
         get {
             return layer.borderWidth
         }
@@ -36,7 +36,7 @@ public extension UIView {
             layer.borderWidth = newValue
         }
     }
-    @IBInspectable public var borderColor: UIColor? {
+    @IBInspectable var borderColor: UIColor? {
         get {
             guard let borderColor = layer.borderColor else {
                 return nil
@@ -47,7 +47,7 @@ public extension UIView {
             layer.borderColor = newValue?.cgColor
         }
     }
-    @IBInspectable public var shadowOffset: CGSize {
+    @IBInspectable var shadowOffset: CGSize {
         get {
             return layer.shadowOffset
         }
@@ -55,7 +55,7 @@ public extension UIView {
             layer.shadowOffset = newValue
         }
     }
-    @IBInspectable public var shadowRadius: CGFloat {
+    @IBInspectable var shadowRadius: CGFloat {
         get {
             return layer.shadowRadius
         }
@@ -64,7 +64,7 @@ public extension UIView {
             layer.masksToBounds = newValue == 0
         }
     }
-    @IBInspectable public var shadowOpacity: Float {
+    @IBInspectable var shadowOpacity: Float {
         get {
             return layer.shadowOpacity
         }
@@ -72,7 +72,7 @@ public extension UIView {
             layer.shadowOpacity = newValue
         }
     }
-    @IBInspectable public var shadowColor: UIColor? {
+    @IBInspectable var shadowColor: UIColor? {
         get {
             guard let shadowColor = layer.shadowColor else {
                 return nil

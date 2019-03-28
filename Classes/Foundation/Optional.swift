@@ -58,7 +58,7 @@ public extension EmptyValueRepresentable {
     /// default implementation of protocol method
     ///
     /// - Returns: nil if empty, otherwise 'self'
-    public func nilIfEmpty() -> Self? {
+    func nilIfEmpty() -> Self? {
         return self.isEmpty ? nil : self
     }
 }
@@ -88,7 +88,7 @@ public extension Optional where Wrapped: EmptyValueRepresentable {
     /// Return empty value or value based on whether or not the value is nil.
     ///
     /// - Returns: empty value if `self == nil`, otherwise the value
-    public func valueOrEmpty() -> Wrapped {
+    func valueOrEmpty() -> Wrapped {
         switch self {
         case .some(let value):
             return value
@@ -101,7 +101,7 @@ public extension Optional where Wrapped: EmptyValueRepresentable {
     ///
     /// - Parameter transform: closure expression
     /// - Returns: empty value if `self == nil`, otherwise return the result of mapping `transform` over the value.
-    public func mapOrEmpty(_ transform: (Wrapped) -> Wrapped) -> Wrapped {
+    func mapOrEmpty(_ transform: (Wrapped) -> Wrapped) -> Wrapped {
         switch self {
         case .some(let value):
             return transform(value)

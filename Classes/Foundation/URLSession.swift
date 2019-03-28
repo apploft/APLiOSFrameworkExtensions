@@ -10,7 +10,7 @@ public extension URLSession {
     /// the load has completed or timed out.
     /// - Parameter request: the url load request
     /// - Returns: the result of the url request
-    public func synchronousDataTask(request: URLRequest) -> (Data?, URLResponse?, Error?) {
+    func synchronousDataTask(request: URLRequest) -> (Data?, URLResponse?, Error?) {
         var data: Data?, response: URLResponse?, error: Error?
         
         let semaphore = DispatchSemaphore(value: 0)

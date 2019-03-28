@@ -20,11 +20,11 @@ public protocol NibLoadableView {
 }
 
 public extension NibLoadableView where Self: UIView {
-	public static var nibName: String {
+    static var nibName: String {
 		return String(describing: self)
 	}
 	
-	public static var nib: UINib {
+    static var nib: UINib {
 		return UINib(nibName: self.nibName, bundle: nil)
 	}
 }
@@ -39,7 +39,7 @@ public protocol NibLoadableFinalView: NibLoadableView {
 }
 
 public extension NibLoadableFinalView {
-	public static var nibInstance: Self {
+    static var nibInstance: Self {
 		guard let nibObject = self.nib.instantiate(withOwner: nil, options: nil).last as? Self else {
 			fatalError("Failed to create an instance of \(self) from \(self.nibName) nib.")
 		}

@@ -11,7 +11,7 @@ public extension UIButton {
     /// can only be configured with a state-dependent background image.
     /// - Parameter color: the color to set
     /// - Parameter forState: the state to set the color for
-    public func setBackgroundColor(color: UIColor, forState: UIControl.State) {
+    func setBackgroundColor(color: UIColor, forState: UIControl.State) {
         UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
         UIGraphicsGetCurrentContext()!.setFillColor(color.cgColor)
         UIGraphicsGetCurrentContext()!.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
@@ -27,7 +27,7 @@ public extension UIButton {
     /// - Parameter startColor: the start color of the gradient color
     /// - Parameter endColor: the end color of the gradient color
     /// - Parameter forState: the state to set the color for
-    public func setGradientBackgroundColor(startColor: UIColor, endColor: UIColor, forState: UIControl.State) {
+    func setGradientBackgroundColor(startColor: UIColor, endColor: UIColor, forState: UIControl.State) {
         let gradientImage = self.gradientImage(startColor: startColor, endColor: endColor)
         
         setBackgroundImage(gradientImage, for: forState)

@@ -15,7 +15,7 @@ public extension DispatchQueue {
     /// - Parameters:
     ///   - token: A unique reverse DNS style name such as com.vectorform.<name> or a GUID
     ///   - block: Block to execute once
-    public class func once(token: String, block:() -> Void) {
+    class func once(token: String, block:() -> Void) {
         objc_sync_enter(self)
 
 		defer { 
