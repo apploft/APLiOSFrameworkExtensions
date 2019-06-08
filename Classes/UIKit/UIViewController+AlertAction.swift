@@ -31,6 +31,7 @@ public struct AlertButton {
     }
 }
 
+@available(iOSApplicationExtension, unavailable)
 public extension UIViewController {
     
     /// Convenience method in order to present an alert convenientyl from anywhere. The alert will only have
