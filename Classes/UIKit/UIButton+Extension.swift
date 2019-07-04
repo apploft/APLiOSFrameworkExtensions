@@ -12,6 +12,8 @@ public extension UIButton {
     /// - Parameter color: the color to set
     /// - Parameter forState: the state to set the color for
     func setBackgroundColor(color: UIColor, forState: UIControl.State) {
+        var tmpCornerRadius = self.cornerRadius
+
         UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
         UIGraphicsGetCurrentContext()!.setFillColor(color.cgColor)
         UIGraphicsGetCurrentContext()!.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
@@ -21,6 +23,8 @@ public extension UIButton {
         UIGraphicsEndImageContext()
         
         self.setBackgroundImage(colorImage, for: forState)
+
+        self.cornerRadius = tmpCornerRadius
     }
     
     /// Set a state-dependent gradient background color for a button.
