@@ -72,7 +72,7 @@ public extension UIView {
             layer.shadowOpacity = newValue
         }
     }
-    @IBInspectable var shadowColor: UIColor? {
+    @IBInspectable var layerShadowColor: UIColor? {
         get {
             guard let shadowColor = layer.shadowColor else {
                 return nil
