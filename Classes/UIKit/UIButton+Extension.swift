@@ -12,19 +12,38 @@ public extension UIButton {
     /// - Parameter color: the color to set
     /// - Parameter forState: the state to set the color for
     func setBackgroundColor(color: UIColor, forState: UIControl.State) {
-        let tmpCornerRadius = self.cornerRadius
-
         UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
-        UIGraphicsGetCurrentContext()!.setFillColor(color.cgColor)
-        UIGraphicsGetCurrentContext()!.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+        
+        guard let context = UIGraphicsGetCurrentContext() else { return }
+        context.setFillColor(color.cgColor)
+        context.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
         
         let colorImage = UIGraphicsGetImageFromCurrentImageContext()
         
         UIGraphicsEndImageContext()
         
         self.setBackgroundImage(colorImage, for: forState)
-
-        self.cornerRadius = tmpCornerRadius
+    }
+    
+    func setRoundedRectBackgroundImage(color: UIColor, height: CGFloat, cornerRadius: CGFloat, forState: UIControl.State) {
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: height, height: height), false, 0)
+        
+        guard let context = UIGraphicsGetCurrentContext() else { return }
+        let rect = CGRect(x: 0, y: 0, width: height, height: height)
+        let clipPath: CGPath = UIBezierPath(roundedRect: rect, cornerRadius: cornerRadius).cgPath
+        
+        context.addPath(clipPath)
+        context.setFillColor(color.cgColor)
+        context.closePath()
+        context.fillPath()
+        
+        let colorImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        let inset: CGFloat = height/2-1
+        let image = colorImage?.resizableImage(withCapInsets: UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset), resizingMode: .stretch)
+        
+        self.setBackgroundImage(image, for: forState)
     }
     
     /// Set a state-dependent gradient background color for a button.
