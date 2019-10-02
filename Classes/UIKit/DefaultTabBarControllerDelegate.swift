@@ -42,7 +42,7 @@ open class DefaultTabBarControllerDelegate: NSObject, UITabBarControllerDelegate
     /// Initializer
     ///
     /// - Parameter startIndex: Initially selected index of tab bar
-    init(startIndex: Int = 0) {
+    public init(startIndex: Int = 0) {
         currentIndex = startIndex
     }
 
@@ -50,7 +50,7 @@ open class DefaultTabBarControllerDelegate: NSObject, UITabBarControllerDelegate
     ///
     /// - Parameter tabBarController: Instance of the tab bar controller
     /// - Parameter viewController: Selected view controller
-    public func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+    open func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
 
         let selectedIndex = tabBarController.selectedIndex
         if currentIndex == selectedIndex {
@@ -62,7 +62,7 @@ open class DefaultTabBarControllerDelegate: NSObject, UITabBarControllerDelegate
 
 
 public extension UIViewController {
-   @objc func tabBarItemSelectedAgain() {
+   @objc open func tabBarItemSelectedAgain() {
 
     }
 }
