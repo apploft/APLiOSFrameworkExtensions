@@ -56,4 +56,72 @@ public extension WKHTTPCookieStore {
             }
         }
     }
+
+    /// WKHTTPCookieStore is lacking a method to remove multiple cookies
+    /// at once. So we're hand crafting one.
+    /// - Parameters:
+    ///   - cookies: the cookies to remove
+    ///   - completion: a completion block being called, once the cookies
+    ///     have been removed
+    func removeCookies(_ cookies: [HTTPCookie]?, completion: @escaping () -> Void) {
+        guard let cookies = cookies, cookies.count > 0 else {
+            completion()
+            return
+        }
+
+        let dispatchGroup = DispatchGroup()
+
+        cookies.forEach { cookie in
+            dispatchGroup.enter()
+            DispatchQueue.main.async {
+                self.delete(cookie) {
+                    dispatchGroup.leave()
+                }
+            }
+        }
+
+        dispatchGroup.notify(queue: DispatchQueue.main,
+                             work: DispatchWorkItem(block: completion))
+    }
+
+    /// The 'getAllCookies' method of WKHTTPCookieStore returns all
+    /// cookies of all domains. What probably often is needed are just
+    /// the cookies for a specific domain.
+    /// - Parameters:
+    ///   - domain: the domain to return cookies for. If 'nil' all cookies
+    ///     will be returned
+    ///   - onlyUnexpiredCookies: usually only unexpired cookies are wanted
+    ///     however the caller can overrule this.
+    ///   - completion: a completion handler receiving all cookies matching
+    ///     the specified filter criteria.
+    func getAllCookies(domain: String? = nil, onlyUnexpiredCookies: Bool = true, completion: @escaping ([HTTPCookie]) -> Void) {
+        self.getAllCookies { allCookies in
+            var filteredCookies = allCookies
+
+            if let domain = domain {
+                filteredCookies = filteredCookies.filter {
+                    $0.domain == domain
+                }
+            }
+
+            if onlyUnexpiredCookies {
+                filteredCookies = self.unexpiredCookiesFrom(filteredCookies)
+            }
+
+            completion(filteredCookies)
+        }
+    }
+
+    private func unexpiredCookiesFrom(_ cookies: [HTTPCookie]) -> [HTTPCookie] {
+        return cookies.filter { cookie in
+            guard let expireDate = cookie.expiresDate else { return true }
+
+            // The 'Date()' constructor is broken which is why we are applying
+            // such crude workarounds here.
+            let now = Date(timeIntervalSinceNow: 0)
+            let isExpired = expireDate.timeIntervalSince(now) < 0
+
+            return !isExpired
+        }
+    }
 }
